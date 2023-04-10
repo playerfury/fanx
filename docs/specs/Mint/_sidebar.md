@@ -1,0 +1,16 @@
+<!-- docs/_sidebar.md -->
+
+* [About SGE Network](../../README.md)
+* [Modules](../README.md)
+  * [Bet](../Bet/01_Overview.md)
+  * [DVM](../DVM/01_Overview.md)
+  * [Mint](../Mint/01_Overview.md)
+    * [Overview](../Mint/01_Overview.md)
+    * [Concepts](../Mint/02_Concepts.md)
+    * [State](../Mint/03_State.md)
+    * [Begin Block](../Mint/04_Begin_Block.md)
+    * [Events](../Mint/05_Events.md)
+    * [Parameters](../Mint/06_Parameters.md)
+  * [Market](../Market/01_Overview.md)
+  * [House](../House/01_Overview.md)
+  * [Strategic Reserve](../StrategicReserve/01_Overview.md)
