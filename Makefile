@@ -16,7 +16,7 @@ PACKAGES_SIMTEST=$(shell go list ./... | grep '/simulation')
 LEDGER_ENABLED ?= true
 SDK_PACK := $(shell go list -m github.com/cosmos/cosmos-sdk | sed  's/ /\@/g')
 TM_VERSION := $(shell go list -m github.com/tendermint/tendermint | sed 's:.* ::') # grab everything after the space in "github.com/tendermint/tendermint v0.34.7"
-HTTPS_GIT := https://github.com/playerfury/fury.git
+HTTPS_GIT := https://github.com/playerfury/fanx.git
 DOCKER := $(shell which docker)
 DOCKER_BUF := $(DOCKER) run --rm -v $(CURDIR)/proto:/workspace --workdir /workspace bufbuild/buf
 BUILDDIR ?= $(CURDIR)/build
@@ -52,11 +52,11 @@ ifeq ($(LEDGER_ENABLED),true)
   endif
 endif
 
-ifeq (cleveldb,$(findstring cleveldb,$(FURY_BUILD_OPTIONS)))
+ifeq (cleveldb,$(findstring cleveldb,$(FANX_BUILD_OPTIONS)))
   build_tags += gcc
 endif
 
-ifeq (secp,$(findstring secp,$(FURY_BUILD_OPTIONS)))
+ifeq (secp,$(findstring secp,$(FANX_BUILD_OPTIONS)))
   build_tags += libsecp256k1_sdk
 endif
 
@@ -67,7 +67,7 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 # process linker flags
 
-ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=fury \
+ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=fanx \
 		  -X github.com/cosmos/cosmos-sdk/version.AppName=fanx \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
@@ -75,26 +75,26 @@ ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=fury \
 			-X github.com/tendermint/tendermint/version.TMCoreSemVer=$(TM_VERSION)
 
 # DB backend selection
-ifeq (cleveldb,$(findstring cleveldb,$(FURY_BUILD_OPTIONS)))
+ifeq (cleveldb,$(findstring cleveldb,$(FANX_BUILD_OPTIONS)))
   ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=cleveldb
 endif
-ifeq (badgerdb,$(findstring badgerdb,$(FURY_BUILD_OPTIONS)))
+ifeq (badgerdb,$(findstring badgerdb,$(FANX_BUILD_OPTIONS)))
   ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=badgerdb
   BUILD_TAGS += badgerdb
 endif
 # handle rocksdb
-ifeq (rocksdb,$(findstring rocksdb,$(FURY_BUILD_OPTIONS)))
+ifeq (rocksdb,$(findstring rocksdb,$(FANX_BUILD_OPTIONS)))
   CGO_ENABLED=1
   BUILD_TAGS += rocksdb
   ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=rocksdb
 endif
 # handle boltdb
-ifeq (boltdb,$(findstring boltdb,$(FURY_BUILD_OPTIONS)))
+ifeq (boltdb,$(findstring boltdb,$(FANX_BUILD_OPTIONS)))
   BUILD_TAGS += boltdb
   ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=boltdb
 endif
 
-ifeq (,$(findstring nostrip,$(FURY_BUILD_OPTIONS)))
+ifeq (,$(findstring nostrip,$(FANX_BUILD_OPTIONS)))
   ldflags += -w -s
 endif
 ldflags += $(LDFLAGS)
@@ -105,7 +105,7 @@ build_tags := $(strip $(build_tags))
 
 BUILD_FLAGS := -tags "$(build_tags)" -ldflags '$(ldflags)'
 # check for nostrip option
-ifeq (,$(findstring nostrip,$(FURY_BUILD_OPTIONS)))
+ifeq (,$(findstring nostrip,$(FANX_BUILD_OPTIONS)))
   BUILD_FLAGS += -trimpath
 endif
 
@@ -115,7 +115,7 @@ endif
 
 check_version:
 ifneq ($(GO_MINOR_VERSION),18)
-	@echo "ERROR: Go version 1.18 is required for this version of FURY. Go 1.19 has changes that are believed to break consensus."
+	@echo "ERROR: Go version 1.18 is required for this version of FANX. Go 1.19 has changes that are believed to break consensus."
 	exit 1
 endif
 
@@ -132,7 +132,7 @@ $(BUILDDIR)/:
 	mkdir -p $(BUILDDIR)/
 
 build-linux: go.sum
-	LEDGER_ENABLED=false GOOS=linux GOARCH=amd64 $(MAKE) build
+	LEDGER_ENABLED=false GOOS=linux GOARCH=arm64 $(MAKE) build
 
 go-mod-cache: go.sum
 	@echo "--> Download go modules to local cache"
@@ -187,7 +187,7 @@ docs:
 .PHONY: docs
 
 protoVer=v0.8
-protoImageName=furynetwork/fury-proto-gen:$(protoVer)
+protoImageName=fanfury/fanfury:fanx-proto-gen:$(protoVer)
 containerProtoGen=cosmos-sdk-proto-gen-$(protoVer)
 containerProtoFmt=cosmos-sdk-proto-fmt-$(protoVer)
 
