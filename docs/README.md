@@ -47,10 +47,10 @@ Furyx could be installed by two ways - downloading binary from releases page or 
 
 - Check sha256 hash sum
 
-- Place fanxd into /usr/local/sbin
+- Place fanx into /usr/local/sbin
 
 ```shell
-sudo mv fanxd /usr/local/sbin/fanxd
+sudo mv fanx /usr/local/sbin/fanx
 ```
 
 ### Building from source
@@ -81,7 +81,7 @@ make install
 ### Install system.d service file
 
 ```shell
-nano /etc/systemd/system/fanxd.service
+nano /etc/systemd/system/fanx.service
 ```
 
 Please following contents(working dir may be changed as needed)
@@ -95,7 +95,7 @@ After=network.target
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu
-ExecStart=/usr/local/sbin/fanxd start
+ExecStart=/usr/local/sbin/fanx start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=40960
@@ -112,11 +112,11 @@ sudo systemctl daemon-reload
 
 ### Generate keys
 
-`fanxd keys add [key_name]`
+`fanx keys add [key_name]`
 
 or
 
-`fanxd keys add [key_name] --recover` to regenerate keys with your [BIP39](https://github.com/bitcoin/bips/tree/master/bip-0039) mnemonic
+`fanx keys add [key_name] --recover` to regenerate keys with your [BIP39](https://github.com/bitcoin/bips/tree/master/bip-0039) mnemonic
 
 ### Connect to a chain and start node
 
@@ -124,7 +124,7 @@ or
 - Initialize node
 
 ```shell
-fanxd init {{NODE_NAME}} --chain-id playerfury-1
+fanx init {{NODE_NAME}} --chain-id playerfury-1
 ```
 
 Select network to join
@@ -134,7 +134,7 @@ Select network to join
 - Start node
 
 ```shell
-fanxd start
+fanx start
 ```
 
 ## Network Compatibility Matrix
@@ -156,13 +156,13 @@ Coming Soon!!
 - Place the genesis file  with the genesis file of the chain.
 
 ```shell
-wget https://github.com/playerfury/networks/blob/master/playerfury-1/genesis.json -O ~/.fanxd/config/genesis.json
+wget https://github.com/playerfury/networks/blob/master/playerfury-1/genesis.json -O ~/.fanx/config/genesis.json
 ```
 
 Verify genesis hash sum
 
 ```shell
-sha256sum ~/.fanxd/config/genesis.json
+sha256sum ~/.fanx/config/genesis.json
 ```
 
 Correct sha256 sum for playerfury-1 is - 2bea72699f9c1afd6217f7e76f14f07c1fbe849d090fc37cd008a42d14d5d30c
@@ -177,17 +177,17 @@ sed -i '/s/persistent_peers = ""/persistent_peers = "4980b478f91de9be0564a547779
 - Start node
 
 ```shell
-fanxd start
+fanx start
 ```
 
 ### Initialize a new chain and start node
 
-- Initialize: `fanxd init [node_name] --chain-id [chain_name]`
-- Add key for genesis account `fanxd keys add [genesis_key_name]`
-- Add genesis account `fanxd add-genesis-account [genesis_key_name] 10000000000000000000ufanx`
-- Create a validator at genesis `fanxd gentx [genesis_key_name] 10000000ufanx --chain-id [chain_name]`
-- Collect genesis transactions `fanxd collect-gentxs`
-- Start node `fanxd start`
+- Initialize: `fanx init [node_name] --chain-id [chain_name]`
+- Add key for genesis account `fanx keys add [genesis_key_name]`
+- Add genesis account `fanx add-genesis-account [genesis_key_name] 10000000000000000000ufanx`
+- Create a validator at genesis `fanx gentx [genesis_key_name] 10000000ufanx --chain-id [chain_name]`
+- Collect genesis transactions `fanx collect-gentxs`
+- Start node `fanx start`
 
 ### Reset chain
 
@@ -198,11 +198,11 @@ rm -rf ~/.fanx
 ### Shutdown node
 
 ```shell
-killall fanxd
+killall fanx
 ```
 
 ### Check version
 
 ```shell
-fanxd version
+fanx version
 ```

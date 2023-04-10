@@ -5,7 +5,7 @@ import (
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/playerfury/fanx/app"
-	"github.com/playerfury/fanx/cmd/fanxd/cmd"
+	"github.com/playerfury/fanx/cmd/fanx/cmd"
 	"github.com/stretchr/testify/require"
 )
 
