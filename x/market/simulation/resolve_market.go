@@ -7,8 +7,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/playerfury/furyx/x/market/keeper"
-	"github.com/playerfury/furyx/x/market/types"
+	"github.com/playerfury/fanx/x/market/keeper"
+	"github.com/playerfury/fanx/x/market/types"
 )
 
 // SimulateMsgResolveMarket simulates the resolve market flow

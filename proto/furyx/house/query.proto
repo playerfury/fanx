@@ -8,7 +8,7 @@ import "furyx/house/params.proto";
 import "furyx/house/deposit.proto";
 import "furyx/house/withdraw.proto";
 
-option go_package = "github.com/playerfury/furyx/x/house/types";
+option go_package = "github.com/playerfury/fanx/x/house/types";
 
 // Query defines the gRPC querier service.
 service Query {

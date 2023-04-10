@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/playerfury/furyx/x/mint/simulation"
+	"github.com/playerfury/fanx/x/mint/simulation"
 )
 
 func TestParamChangest(t *testing.T) {

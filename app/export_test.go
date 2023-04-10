@@ -3,7 +3,7 @@ package app_test
 import (
 	"testing"
 
-	simappUtil "github.com/playerfury/furyx/testutil/simapp"
+	simappUtil "github.com/playerfury/fanx/testutil/simapp"
 	"github.com/stretchr/testify/require"
 	tmtypes "github.com/tendermint/tendermint/types"
 )

@@ -57,7 +57,7 @@ sudo mv furyx /usr/local/sbin/furyx
 - Clone git repository
 
 ```shell
-git clone https://github.com/playerfury/furyx.git
+git clone https://github.com/playerfury/fanx.git
 ```
 
 - Checkout release tag

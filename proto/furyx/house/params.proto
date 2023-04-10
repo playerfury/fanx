@@ -3,7 +3,7 @@ package furyx.furyx.house;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/playerfury/furyx/x/house/types";
+option go_package = "github.com/playerfury/fanx/x/house/types";
 
 // Params define the parameters for the house module.
 message Params {

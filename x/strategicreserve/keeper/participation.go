@@ -4,9 +4,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	housetypes "github.com/playerfury/furyx/x/house/types"
-	markettypes "github.com/playerfury/furyx/x/market/types"
-	"github.com/playerfury/furyx/x/strategicreserve/types"
+	housetypes "github.com/playerfury/fanx/x/house/types"
+	markettypes "github.com/playerfury/fanx/x/market/types"
+	"github.com/playerfury/fanx/x/strategicreserve/types"
 )
 
 // SetOrderBookParticipation sets a book participation.

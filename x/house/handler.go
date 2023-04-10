@@ -6,8 +6,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/playerfury/furyx/x/house/keeper"
-	"github.com/playerfury/furyx/x/house/types"
+	"github.com/playerfury/fanx/x/house/keeper"
+	"github.com/playerfury/fanx/x/house/types"
 )
 
 // NewHandler returns sdk.handler instance with configured message handler function

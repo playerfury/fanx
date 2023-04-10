@@ -7,7 +7,7 @@ import "furyx/bet/bet_odds.proto";
 import "furyx/bet/kyc.proto";
 import "furyx/bet/odds_type.proto";
 
-option go_package = "github.com/playerfury/furyx/x/bet/types";
+option go_package = "github.com/playerfury/fanx/x/bet/types";
 
 // BetPlacementTicketPayload indicates data of bet placement ticket.
 message BetPlacementTicketPayload {

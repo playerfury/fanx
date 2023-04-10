@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/playerfury/furyx/x/bet/types"
+	"github.com/playerfury/fanx/x/bet/types"
 )
 
 type msgServer struct {

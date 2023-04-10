@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/playerfury/furyx/x/market/keeper"
-	"github.com/playerfury/furyx/x/market/types"
+	"github.com/playerfury/fanx/x/market/keeper"
+	"github.com/playerfury/fanx/x/market/types"
 )
 
 // NewHandler ...

@@ -9,7 +9,7 @@ import "furyx/strategicreserve/orderbook.proto";
 import "furyx/strategicreserve/participation.proto";
 import "furyx/strategicreserve/exposure.proto";
 
-option go_package = "github.com/playerfury/furyx/x/strategicreserve/types";
+option go_package = "github.com/playerfury/fanx/x/strategicreserve/types";
 
 // Query defines the gRPC querier service.
 service Query {

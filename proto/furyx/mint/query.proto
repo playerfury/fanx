@@ -5,7 +5,7 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "furyx/mint/params.proto";
 
-option go_package = "github.com/playerfury/furyx/x/mint/types";
+option go_package = "github.com/playerfury/fanx/x/mint/types";
 
 // Query defines the gRPC querier service.
 service Query {

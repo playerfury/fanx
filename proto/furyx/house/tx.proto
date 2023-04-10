@@ -4,7 +4,7 @@ package furyx.furyx.house;
 import "gogoproto/gogo.proto";
 import "furyx/house/withdraw.proto";
 
-option go_package = "github.com/playerfury/furyx/x/house/types";
+option go_package = "github.com/playerfury/fanx/x/house/types";
 
 // Msg defines the house Msg service.
 service Msg {
