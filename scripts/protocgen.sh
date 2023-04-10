@@ -16,8 +16,8 @@ for dir in $proto_dirs; do
 done
 
 # move proto files to the right places
-if [ -d "./github.com/playerfury/furyx" ]; then
-  cp -r github.com/mars-protocol/hub/* ./
+if [ -d "./github.com/playerfury/fanx" ]; then
+  cp -r github.com/playerfury/fanxs/* ./
   rm -rf github.com
 fi
 
