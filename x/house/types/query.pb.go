@@ -443,14 +443,14 @@ func (m *QueryWithdrawalsByAccountResponse) GetPagination() *query.PageResponse 
 }
 
 func init() {
-	proto.RegisterType((*QueryParamsRequest)(nil), "fanx.fanx.house.QueryParamsRequest")
-	proto.RegisterType((*QueryParamsResponse)(nil), "fanx.fanx.house.QueryParamsResponse")
-	proto.RegisterType((*QueryDepositsRequest)(nil), "fanx.fanx.house.QueryDepositsRequest")
-	proto.RegisterType((*QueryDepositsResponse)(nil), "fanx.fanx.house.QueryDepositsResponse")
-	proto.RegisterType((*QueryDepositsByAccountRequest)(nil), "fanx.fanx.house.QueryDepositsByAccountRequest")
-	proto.RegisterType((*QueryDepositsByAccountResponse)(nil), "fanx.fanx.house.QueryDepositsByAccountResponse")
-	proto.RegisterType((*QueryWithdrawalsByAccountRequest)(nil), "fanx.fanx.house.QueryWithdrawalsByAccountRequest")
-	proto.RegisterType((*QueryWithdrawalsByAccountResponse)(nil), "fanx.fanx.house.QueryWithdrawalsByAccountResponse")
+	proto.RegisterType((*QueryParamsRequest)(nil), "fanx.house.QueryParamsRequest")
+	proto.RegisterType((*QueryParamsResponse)(nil), "fanx.house.QueryParamsResponse")
+	proto.RegisterType((*QueryDepositsRequest)(nil), "fanx.house.QueryDepositsRequest")
+	proto.RegisterType((*QueryDepositsResponse)(nil), "fanx.house.QueryDepositsResponse")
+	proto.RegisterType((*QueryDepositsByAccountRequest)(nil), "fanx.house.QueryDepositsByAccountRequest")
+	proto.RegisterType((*QueryDepositsByAccountResponse)(nil), "fanx.house.QueryDepositsByAccountResponse")
+	proto.RegisterType((*QueryWithdrawalsByAccountRequest)(nil), "fanx.house.QueryWithdrawalsByAccountRequest")
+	proto.RegisterType((*QueryWithdrawalsByAccountResponse)(nil), "fanx.house.QueryWithdrawalsByAccountResponse")
 }
 
 func init() { proto.RegisterFile("fanx/house/query.proto", fileDescriptor_436b89bf9285a4cb) }
@@ -529,7 +529,7 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error) {
 	out := new(QueryParamsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.house.Query/Params", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.house.Query/Params", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -538,7 +538,7 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 
 func (c *queryClient) Deposits(ctx context.Context, in *QueryDepositsRequest, opts ...grpc.CallOption) (*QueryDepositsResponse, error) {
 	out := new(QueryDepositsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.house.Query/Deposits", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.house.Query/Deposits", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -547,7 +547,7 @@ func (c *queryClient) Deposits(ctx context.Context, in *QueryDepositsRequest, op
 
 func (c *queryClient) DepositsByAccount(ctx context.Context, in *QueryDepositsByAccountRequest, opts ...grpc.CallOption) (*QueryDepositsByAccountResponse, error) {
 	out := new(QueryDepositsByAccountResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.house.Query/DepositsByAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.house.Query/DepositsByAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -556,7 +556,7 @@ func (c *queryClient) DepositsByAccount(ctx context.Context, in *QueryDepositsBy
 
 func (c *queryClient) WithdrawalsByAccount(ctx context.Context, in *QueryWithdrawalsByAccountRequest, opts ...grpc.CallOption) (*QueryWithdrawalsByAccountResponse, error) {
 	out := new(QueryWithdrawalsByAccountResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.house.Query/WithdrawalsByAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.house.Query/WithdrawalsByAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -606,7 +606,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.house.Query/Params",
+		FullMethod: "/fanx.house.Query/Params",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Params(ctx, req.(*QueryParamsRequest))
@@ -624,7 +624,7 @@ func _Query_Deposits_Handler(srv interface{}, ctx context.Context, dec func(inte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.house.Query/Deposits",
+		FullMethod: "/fanx.house.Query/Deposits",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Deposits(ctx, req.(*QueryDepositsRequest))
@@ -642,7 +642,7 @@ func _Query_DepositsByAccount_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.house.Query/DepositsByAccount",
+		FullMethod: "/fanx.house.Query/DepositsByAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).DepositsByAccount(ctx, req.(*QueryDepositsByAccountRequest))
@@ -660,7 +660,7 @@ func _Query_WithdrawalsByAccount_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.house.Query/WithdrawalsByAccount",
+		FullMethod: "/fanx.house.Query/WithdrawalsByAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).WithdrawalsByAccount(ctx, req.(*QueryWithdrawalsByAccountRequest))
@@ -669,7 +669,7 @@ func _Query_WithdrawalsByAccount_Handler(srv interface{}, ctx context.Context, d
 }
 
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "fanx.fanx.house.Query",
+	ServiceName: "fanx.house.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.bet;
+package fanx.bet;
 
 import "gogoproto/gogo.proto";
 import "fanx/bet/params.proto";

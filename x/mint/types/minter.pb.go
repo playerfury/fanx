@@ -78,7 +78,7 @@ func (m *Minter) GetPhaseStep() int32 {
 }
 
 func init() {
-	proto.RegisterType((*Minter)(nil), "fanx.fanx.mint.Minter")
+	proto.RegisterType((*Minter)(nil), "fanx.mint.Minter")
 }
 
 func init() { proto.RegisterFile("fanx/mint/minter.proto", fileDescriptor_d31ed0ee2430eeec) }

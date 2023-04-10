@@ -410,14 +410,14 @@ func (m *QueryMarketsByUIDsResponse) GetFailedMarkets() []string {
 }
 
 func init() {
-	proto.RegisterType((*QueryParamsRequest)(nil), "fanx.fanx.market.QueryParamsRequest")
-	proto.RegisterType((*QueryParamsResponse)(nil), "fanx.fanx.market.QueryParamsResponse")
-	proto.RegisterType((*QueryMarketRequest)(nil), "fanx.fanx.market.QueryMarketRequest")
-	proto.RegisterType((*QueryMarketResponse)(nil), "fanx.fanx.market.QueryMarketResponse")
-	proto.RegisterType((*QueryMarketsRequest)(nil), "fanx.fanx.market.QueryMarketsRequest")
-	proto.RegisterType((*QueryMarketsResponse)(nil), "fanx.fanx.market.QueryMarketsResponse")
-	proto.RegisterType((*QueryMarketsByUIDsRequest)(nil), "fanx.fanx.market.QueryMarketsByUIDsRequest")
-	proto.RegisterType((*QueryMarketsByUIDsResponse)(nil), "fanx.fanx.market.QueryMarketsByUIDsResponse")
+	proto.RegisterType((*QueryParamsRequest)(nil), "fanx.market.QueryParamsRequest")
+	proto.RegisterType((*QueryParamsResponse)(nil), "fanx.market.QueryParamsResponse")
+	proto.RegisterType((*QueryMarketRequest)(nil), "fanx.market.QueryMarketRequest")
+	proto.RegisterType((*QueryMarketResponse)(nil), "fanx.market.QueryMarketResponse")
+	proto.RegisterType((*QueryMarketsRequest)(nil), "fanx.market.QueryMarketsRequest")
+	proto.RegisterType((*QueryMarketsResponse)(nil), "fanx.market.QueryMarketsResponse")
+	proto.RegisterType((*QueryMarketsByUIDsRequest)(nil), "fanx.market.QueryMarketsByUIDsRequest")
+	proto.RegisterType((*QueryMarketsByUIDsResponse)(nil), "fanx.market.QueryMarketsByUIDsResponse")
 }
 
 func init() { proto.RegisterFile("fanx/market/query.proto", fileDescriptor_a0102cd07774feff) }
@@ -495,7 +495,7 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error) {
 	out := new(QueryParamsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.market.Query/Params", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.market.Query/Params", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -504,7 +504,7 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 
 func (c *queryClient) Market(ctx context.Context, in *QueryMarketRequest, opts ...grpc.CallOption) (*QueryMarketResponse, error) {
 	out := new(QueryMarketResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.market.Query/Market", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.market.Query/Market", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -513,7 +513,7 @@ func (c *queryClient) Market(ctx context.Context, in *QueryMarketRequest, opts .
 
 func (c *queryClient) Markets(ctx context.Context, in *QueryMarketsRequest, opts ...grpc.CallOption) (*QueryMarketsResponse, error) {
 	out := new(QueryMarketsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.market.Query/Markets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.market.Query/Markets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -522,7 +522,7 @@ func (c *queryClient) Markets(ctx context.Context, in *QueryMarketsRequest, opts
 
 func (c *queryClient) MarketsByUIDs(ctx context.Context, in *QueryMarketsByUIDsRequest, opts ...grpc.CallOption) (*QueryMarketsByUIDsResponse, error) {
 	out := new(QueryMarketsByUIDsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.market.Query/MarketsByUIDs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.market.Query/MarketsByUIDs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -572,7 +572,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.market.Query/Params",
+		FullMethod: "/fanx.market.Query/Params",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Params(ctx, req.(*QueryParamsRequest))
@@ -590,7 +590,7 @@ func _Query_Market_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.market.Query/Market",
+		FullMethod: "/fanx.market.Query/Market",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Market(ctx, req.(*QueryMarketRequest))
@@ -608,7 +608,7 @@ func _Query_Markets_Handler(srv interface{}, ctx context.Context, dec func(inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.market.Query/Markets",
+		FullMethod: "/fanx.market.Query/Markets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Markets(ctx, req.(*QueryMarketsRequest))
@@ -626,7 +626,7 @@ func _Query_MarketsByUIDs_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.market.Query/MarketsByUIDs",
+		FullMethod: "/fanx.market.Query/MarketsByUIDs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).MarketsByUIDs(ctx, req.(*QueryMarketsByUIDsRequest))
@@ -635,7 +635,7 @@ func _Query_MarketsByUIDs_Handler(srv interface{}, ctx context.Context, dec func
 }
 
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "fanx.fanx.market.Query",
+	ServiceName: "fanx.market.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

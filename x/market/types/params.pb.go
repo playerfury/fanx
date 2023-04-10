@@ -68,7 +68,7 @@ func (m *Params) XXX_DiscardUnknown() {
 var xxx_messageInfo_Params proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*Params)(nil), "fanx.fanx.market.Params")
+	proto.RegisterType((*Params)(nil), "fanx.market.Params")
 }
 
 func init() { proto.RegisterFile("fanx/market/params.proto", fileDescriptor_e166b9eeb42fd7f6) }

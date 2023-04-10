@@ -90,7 +90,7 @@ func (m *Params) GetPhases() []Phase {
 }
 
 func init() {
-	proto.RegisterType((*Params)(nil), "fanx.fanx.mint.Params")
+	proto.RegisterType((*Params)(nil), "fanx.mint.Params")
 }
 
 func init() { proto.RegisterFile("fanx/mint/params.proto", fileDescriptor_a4bb1a108a109550) }

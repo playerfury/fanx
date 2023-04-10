@@ -83,7 +83,7 @@ type ProposalVotePayload struct {
 	// proposal_id is the id of the proposal.
 	ProposalId uint64 `protobuf:"varint,1,opt,name=proposal_id,json=proposalId,proto3" json:"proposal_id,omitempty"`
 	// vote is the chosen option for the vote.
-	Vote ProposalVote `protobuf:"varint,2,opt,name=vote,proto3,enum=fanx.fanx.dvm.ProposalVote" json:"vote,omitempty"`
+	Vote ProposalVote `protobuf:"varint,2,opt,name=vote,proto3,enum=fanx.dvm.ProposalVote" json:"vote,omitempty"`
 }
 
 func (m *ProposalVotePayload) Reset()         { *m = ProposalVotePayload{} }
@@ -134,8 +134,8 @@ func (m *ProposalVotePayload) GetVote() ProposalVote {
 }
 
 func init() {
-	proto.RegisterType((*PubkeysChangeProposalPayload)(nil), "fanx.fanx.dvm.PubkeysChangeProposalPayload")
-	proto.RegisterType((*ProposalVotePayload)(nil), "fanx.fanx.dvm.ProposalVotePayload")
+	proto.RegisterType((*PubkeysChangeProposalPayload)(nil), "fanx.dvm.PubkeysChangeProposalPayload")
+	proto.RegisterType((*ProposalVotePayload)(nil), "fanx.dvm.ProposalVotePayload")
 }
 
 func init() { proto.RegisterFile("fanx/dvm/ticket.proto", fileDescriptor_7121f0f264448d06) }

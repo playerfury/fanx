@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.mint;
+package fanx.mint;
 
 option go_package = "github.com/playerfury/fanx/x/mint/types";
 

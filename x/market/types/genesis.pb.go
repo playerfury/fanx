@@ -89,7 +89,7 @@ func (m *GenesisState) GetStats() MarketStats {
 }
 
 func init() {
-	proto.RegisterType((*GenesisState)(nil), "fanx.fanx.market.GenesisState")
+	proto.RegisterType((*GenesisState)(nil), "fanx.market.GenesisState")
 }
 
 func init() { proto.RegisterFile("fanx/market/genesis.proto", fileDescriptor_e4ffd0e85fa3c489) }

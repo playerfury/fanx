@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.strategicreserve;
+package fanx.strategicreserve;
 
 option go_package = "github.com/playerfury/fanx/x/strategicreserve/types";
 

@@ -82,7 +82,7 @@ func (m *PlaceBetFields) GetTicket() string {
 }
 
 func init() {
-	proto.RegisterType((*PlaceBetFields)(nil), "fanx.fanx.bet.PlaceBetFields")
+	proto.RegisterType((*PlaceBetFields)(nil), "fanx.bet.PlaceBetFields")
 }
 
 func init() { proto.RegisterFile("fanx/bet/place_bet_fields.proto", fileDescriptor_d186d55bc7cfa5da) }

@@ -124,7 +124,7 @@ type Bet struct {
 	OddsUID string `protobuf:"bytes,3,opt,name=odds_uid,proto3" json:"odds_uid"`
 	// odds_type is the type of odds that
 	// user choose such as decimal, fractional, etc
-	OddsType OddsType `protobuf:"varint,4,opt,name=odds_type,json=oddsType,proto3,enum=fanx.fanx.bet.OddsType" json:"odds_type,omitempty"`
+	OddsType OddsType `protobuf:"varint,4,opt,name=odds_type,json=oddsType,proto3,enum=fanx.bet.OddsType" json:"odds_type,omitempty"`
 	// odds_value is the odds on which the bet is placed.
 	OddsValue string `protobuf:"bytes,5,opt,name=odds_value,json=oddsValue,proto3" json:"odds_value,omitempty"`
 	// amount is the wager amount.
@@ -132,9 +132,9 @@ type Bet struct {
 	// bet_fee is the betting fee user needs to pay for placing a bet
 	BetFee github_com_cosmos_cosmos_sdk_types.Int `protobuf:"bytes,7,opt,name=bet_fee,json=betFee,proto3,customtype=github.com/cosmos/cosmos-sdk/types.Int" json:"bet_fee"`
 	// status is the status of the bet, such as `unspecified` or `settled`.
-	Status Bet_Status `protobuf:"varint,8,opt,name=status,proto3,enum=fanx.fanx.bet.Bet_Status" json:"status,omitempty"`
+	Status Bet_Status `protobuf:"varint,8,opt,name=status,proto3,enum=fanx.bet.Bet_Status" json:"status,omitempty"`
 	// result is the result of the bet, such as `won` or `lost`.
-	Result Bet_Result `protobuf:"varint,9,opt,name=result,proto3,enum=fanx.fanx.bet.Bet_Result" json:"result,omitempty"`
+	Result Bet_Result `protobuf:"varint,9,opt,name=result,proto3,enum=fanx.bet.Bet_Result" json:"result,omitempty"`
 	// creator is the bettor address.
 	Creator string `protobuf:"bytes,10,opt,name=creator,proto3" json:"creator,omitempty"`
 	// created_at is the bet placement timestamp.
@@ -487,13 +487,13 @@ func (m *BetFulfillment) GetParticipationIndex() uint64 {
 }
 
 func init() {
-	proto.RegisterEnum("fanx.fanx.bet.Bet_Status", Bet_Status_name, Bet_Status_value)
-	proto.RegisterEnum("fanx.fanx.bet.Bet_Result", Bet_Result_name, Bet_Result_value)
-	proto.RegisterType((*Bet)(nil), "fanx.fanx.bet.Bet")
-	proto.RegisterType((*UID2ID)(nil), "fanx.fanx.bet.UID2ID")
-	proto.RegisterType((*PendingBet)(nil), "fanx.fanx.bet.PendingBet")
-	proto.RegisterType((*SettledBet)(nil), "fanx.fanx.bet.SettledBet")
-	proto.RegisterType((*BetFulfillment)(nil), "fanx.fanx.bet.BetFulfillment")
+	proto.RegisterEnum("fanx.bet.Bet_Status", Bet_Status_name, Bet_Status_value)
+	proto.RegisterEnum("fanx.bet.Bet_Result", Bet_Result_name, Bet_Result_value)
+	proto.RegisterType((*Bet)(nil), "fanx.bet.Bet")
+	proto.RegisterType((*UID2ID)(nil), "fanx.bet.UID2ID")
+	proto.RegisterType((*PendingBet)(nil), "fanx.bet.PendingBet")
+	proto.RegisterType((*SettledBet)(nil), "fanx.bet.SettledBet")
+	proto.RegisterType((*BetFulfillment)(nil), "fanx.bet.BetFulfillment")
 }
 
 func init() { proto.RegisterFile("fanx/bet/bet.proto", fileDescriptor_9bc076bb1a4d9f6e) }

@@ -79,7 +79,7 @@ func (m *Odds) GetMeta() string {
 }
 
 func init() {
-	proto.RegisterType((*Odds)(nil), "fanx.fanx.market.Odds")
+	proto.RegisterType((*Odds)(nil), "fanx.market.Odds")
 }
 
 func init() { proto.RegisterFile("fanx/market/odds.proto", fileDescriptor_cf7f1000ed50889d) }

@@ -94,7 +94,7 @@ func (m *BetOdds) GetValue() string {
 }
 
 func init() {
-	proto.RegisterType((*BetOdds)(nil), "fanx.fanx.bet.BetOdds")
+	proto.RegisterType((*BetOdds)(nil), "fanx.bet.BetOdds")
 }
 
 func init() { proto.RegisterFile("fanx/bet/bet_odds.proto", fileDescriptor_2629a03d0a23fb04) }

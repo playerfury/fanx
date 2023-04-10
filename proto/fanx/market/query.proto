@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.market;
+package fanx.market;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";

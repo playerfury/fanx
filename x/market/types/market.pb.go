@@ -82,7 +82,7 @@ type Market struct {
 	// winner_odds_uids is the list of winner odds universal unique identifiers.
 	WinnerOddsUIDs []string `protobuf:"bytes,5,rep,name=winner_odds_uids,proto3" json:"winner_odds_uids"`
 	// status is the current status of the market.
-	Status MarketStatus `protobuf:"varint,6,opt,name=status,proto3,enum=fanx.fanx.market.MarketStatus" json:"status,omitempty"`
+	Status MarketStatus `protobuf:"varint,6,opt,name=status,proto3,enum=fanx.market.MarketStatus" json:"status,omitempty"`
 	// resolution_ts is the timestamp of the resolution of market.
 	ResolutionTS uint64 `protobuf:"varint,7,opt,name=resolution_ts,proto3" json:"resolution_ts"`
 	// creator is the address of the creator of market.
@@ -249,9 +249,9 @@ func (m *MarketBetConstraints) XXX_DiscardUnknown() {
 var xxx_messageInfo_MarketBetConstraints proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterEnum("fanx.fanx.market.MarketStatus", MarketStatus_name, MarketStatus_value)
-	proto.RegisterType((*Market)(nil), "fanx.fanx.market.Market")
-	proto.RegisterType((*MarketBetConstraints)(nil), "fanx.fanx.market.MarketBetConstraints")
+	proto.RegisterEnum("fanx.market.MarketStatus", MarketStatus_name, MarketStatus_value)
+	proto.RegisterType((*Market)(nil), "fanx.market.Market")
+	proto.RegisterType((*MarketBetConstraints)(nil), "fanx.market.MarketBetConstraints")
 }
 
 func init() { proto.RegisterFile("fanx/market/market.proto", fileDescriptor_935a8ad1d6bee065) }

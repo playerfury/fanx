@@ -121,8 +121,8 @@ func (m *ParticipationExposure) XXX_DiscardUnknown() {
 var xxx_messageInfo_ParticipationExposure proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*OrderBookOddsExposure)(nil), "fanx.fanx.strategicreserve.OrderBookOddsExposure")
-	proto.RegisterType((*ParticipationExposure)(nil), "fanx.fanx.strategicreserve.ParticipationExposure")
+	proto.RegisterType((*OrderBookOddsExposure)(nil), "fanx.strategicreserve.OrderBookOddsExposure")
+	proto.RegisterType((*ParticipationExposure)(nil), "fanx.strategicreserve.ParticipationExposure")
 }
 
 func init() {

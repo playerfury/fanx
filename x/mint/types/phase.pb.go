@@ -65,7 +65,7 @@ func (m *Phase) XXX_DiscardUnknown() {
 var xxx_messageInfo_Phase proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*Phase)(nil), "fanx.fanx.mint.Phase")
+	proto.RegisterType((*Phase)(nil), "fanx.mint.Phase")
 }
 
 func init() { proto.RegisterFile("fanx/mint/phase.proto", fileDescriptor_7fc2241b526dba74) }

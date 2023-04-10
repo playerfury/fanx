@@ -204,7 +204,7 @@ func (m *QueryPubKeysResponse) GetList() []string {
 // Query/PublicKeysChangeProposal RPC method.
 type QueryPublicKeysChangeProposalRequest struct {
 	Id     uint64         `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Status ProposalStatus `protobuf:"varint,2,opt,name=status,proto3,enum=fanx.fanx.dvm.ProposalStatus" json:"status,omitempty"`
+	Status ProposalStatus `protobuf:"varint,2,opt,name=status,proto3,enum=fanx.dvm.ProposalStatus" json:"status,omitempty"`
 }
 
 func (m *QueryPublicKeysChangeProposalRequest) Reset()         { *m = QueryPublicKeysChangeProposalRequest{} }
@@ -305,7 +305,7 @@ func (m *QueryPublicKeysChangeProposalResponse) GetProposal() PublicKeysChangePr
 // Query/PublicKeysChangeProposals RPC method.
 type QueryPublicKeysChangeProposalsRequest struct {
 	Pagination *query.PageRequest `protobuf:"bytes,1,opt,name=pagination,proto3" json:"pagination,omitempty"`
-	Status     ProposalStatus     `protobuf:"varint,2,opt,name=status,proto3,enum=fanx.fanx.dvm.ProposalStatus" json:"status,omitempty"`
+	Status     ProposalStatus     `protobuf:"varint,2,opt,name=status,proto3,enum=fanx.dvm.ProposalStatus" json:"status,omitempty"`
 }
 
 func (m *QueryPublicKeysChangeProposalsRequest) Reset()         { *m = QueryPublicKeysChangeProposalsRequest{} }
@@ -413,14 +413,14 @@ func (m *QueryPublicKeysChangeProposalsResponse) GetPagination() *query.PageResp
 }
 
 func init() {
-	proto.RegisterType((*QueryParamsRequest)(nil), "fanx.fanx.dvm.QueryParamsRequest")
-	proto.RegisterType((*QueryParamsResponse)(nil), "fanx.fanx.dvm.QueryParamsResponse")
-	proto.RegisterType((*QueryPubKeysRequest)(nil), "fanx.fanx.dvm.QueryPubKeysRequest")
-	proto.RegisterType((*QueryPubKeysResponse)(nil), "fanx.fanx.dvm.QueryPubKeysResponse")
-	proto.RegisterType((*QueryPublicKeysChangeProposalRequest)(nil), "fanx.fanx.dvm.QueryPublicKeysChangeProposalRequest")
-	proto.RegisterType((*QueryPublicKeysChangeProposalResponse)(nil), "fanx.fanx.dvm.QueryPublicKeysChangeProposalResponse")
-	proto.RegisterType((*QueryPublicKeysChangeProposalsRequest)(nil), "fanx.fanx.dvm.QueryPublicKeysChangeProposalsRequest")
-	proto.RegisterType((*QueryPublicKeysChangeProposalsResponse)(nil), "fanx.fanx.dvm.QueryPublicKeysChangeProposalsResponse")
+	proto.RegisterType((*QueryParamsRequest)(nil), "fanx.dvm.QueryParamsRequest")
+	proto.RegisterType((*QueryParamsResponse)(nil), "fanx.dvm.QueryParamsResponse")
+	proto.RegisterType((*QueryPubKeysRequest)(nil), "fanx.dvm.QueryPubKeysRequest")
+	proto.RegisterType((*QueryPubKeysResponse)(nil), "fanx.dvm.QueryPubKeysResponse")
+	proto.RegisterType((*QueryPublicKeysChangeProposalRequest)(nil), "fanx.dvm.QueryPublicKeysChangeProposalRequest")
+	proto.RegisterType((*QueryPublicKeysChangeProposalResponse)(nil), "fanx.dvm.QueryPublicKeysChangeProposalResponse")
+	proto.RegisterType((*QueryPublicKeysChangeProposalsRequest)(nil), "fanx.dvm.QueryPublicKeysChangeProposalsRequest")
+	proto.RegisterType((*QueryPublicKeysChangeProposalsResponse)(nil), "fanx.dvm.QueryPublicKeysChangeProposalsResponse")
 }
 
 func init() { proto.RegisterFile("fanx/dvm/query.proto", fileDescriptor_cfb9990f7b27fb76) }
@@ -500,7 +500,7 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error) {
 	out := new(QueryParamsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.dvm.Query/Params", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.dvm.Query/Params", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -509,7 +509,7 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 
 func (c *queryClient) PubKeys(ctx context.Context, in *QueryPubKeysRequest, opts ...grpc.CallOption) (*QueryPubKeysResponse, error) {
 	out := new(QueryPubKeysResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.dvm.Query/PubKeys", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.dvm.Query/PubKeys", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -518,7 +518,7 @@ func (c *queryClient) PubKeys(ctx context.Context, in *QueryPubKeysRequest, opts
 
 func (c *queryClient) PublicKeysChangeProposal(ctx context.Context, in *QueryPublicKeysChangeProposalRequest, opts ...grpc.CallOption) (*QueryPublicKeysChangeProposalResponse, error) {
 	out := new(QueryPublicKeysChangeProposalResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.dvm.Query/PublicKeysChangeProposal", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.dvm.Query/PublicKeysChangeProposal", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -527,7 +527,7 @@ func (c *queryClient) PublicKeysChangeProposal(ctx context.Context, in *QueryPub
 
 func (c *queryClient) PublicKeysChangeProposals(ctx context.Context, in *QueryPublicKeysChangeProposalsRequest, opts ...grpc.CallOption) (*QueryPublicKeysChangeProposalsResponse, error) {
 	out := new(QueryPublicKeysChangeProposalsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.dvm.Query/PublicKeysChangeProposals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.dvm.Query/PublicKeysChangeProposals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -577,7 +577,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.dvm.Query/Params",
+		FullMethod: "/fanx.dvm.Query/Params",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Params(ctx, req.(*QueryParamsRequest))
@@ -595,7 +595,7 @@ func _Query_PubKeys_Handler(srv interface{}, ctx context.Context, dec func(inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.dvm.Query/PubKeys",
+		FullMethod: "/fanx.dvm.Query/PubKeys",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).PubKeys(ctx, req.(*QueryPubKeysRequest))
@@ -613,7 +613,7 @@ func _Query_PublicKeysChangeProposal_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.dvm.Query/PublicKeysChangeProposal",
+		FullMethod: "/fanx.dvm.Query/PublicKeysChangeProposal",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).PublicKeysChangeProposal(ctx, req.(*QueryPublicKeysChangeProposalRequest))
@@ -631,7 +631,7 @@ func _Query_PublicKeysChangeProposals_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.dvm.Query/PublicKeysChangeProposals",
+		FullMethod: "/fanx.dvm.Query/PublicKeysChangeProposals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).PublicKeysChangeProposals(ctx, req.(*QueryPublicKeysChangeProposalsRequest))
@@ -640,7 +640,7 @@ func _Query_PublicKeysChangeProposals_Handler(srv interface{}, ctx context.Conte
 }
 
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "fanx.fanx.dvm.Query",
+	ServiceName: "fanx.dvm.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -70,7 +70,7 @@ func (m *OrderBookStats) GetResolvedUnsettled() []string {
 }
 
 func init() {
-	proto.RegisterType((*OrderBookStats)(nil), "fanx.fanx.strategicreserve.OrderBookStats")
+	proto.RegisterType((*OrderBookStats)(nil), "fanx.strategicreserve.OrderBookStats")
 }
 
 func init() { proto.RegisterFile("fanx/strategicreserve/stats.proto", fileDescriptor_392a01451260450d) }

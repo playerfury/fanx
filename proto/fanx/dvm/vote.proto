@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.dvm;
+package fanx.dvm;
 
 option go_package = "github.com/playerfury/fanx/x/dvm/types";
 

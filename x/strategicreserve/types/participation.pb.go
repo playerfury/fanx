@@ -158,8 +158,8 @@ func (m *ParticipationBetPair) GetBetUID() string {
 }
 
 func init() {
-	proto.RegisterType((*OrderBookParticipation)(nil), "fanx.fanx.strategicreserve.OrderBookParticipation")
-	proto.RegisterType((*ParticipationBetPair)(nil), "fanx.fanx.strategicreserve.ParticipationBetPair")
+	proto.RegisterType((*OrderBookParticipation)(nil), "fanx.strategicreserve.OrderBookParticipation")
+	proto.RegisterType((*ParticipationBetPair)(nil), "fanx.strategicreserve.ParticipationBetPair")
 }
 
 func init() {

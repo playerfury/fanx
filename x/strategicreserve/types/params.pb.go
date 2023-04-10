@@ -78,7 +78,7 @@ func (m *Params) GetBatchSettlementCount() uint64 {
 }
 
 func init() {
-	proto.RegisterType((*Params)(nil), "fanx.fanx.strategicreserve.Params")
+	proto.RegisterType((*Params)(nil), "fanx.strategicreserve.Params")
 }
 
 func init() { proto.RegisterFile("fanx/strategicreserve/params.proto", fileDescriptor_de2d95e3cc19d141) }

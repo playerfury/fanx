@@ -129,8 +129,8 @@ func (m *MsgPlaceBetResponse) GetBet() *PlaceBetFields {
 }
 
 func init() {
-	proto.RegisterType((*MsgPlaceBet)(nil), "fanx.fanx.bet.MsgPlaceBet")
-	proto.RegisterType((*MsgPlaceBetResponse)(nil), "fanx.fanx.bet.MsgPlaceBetResponse")
+	proto.RegisterType((*MsgPlaceBet)(nil), "fanx.bet.MsgPlaceBet")
+	proto.RegisterType((*MsgPlaceBetResponse)(nil), "fanx.bet.MsgPlaceBetResponse")
 }
 
 func init() { proto.RegisterFile("fanx/bet/tx.proto", fileDescriptor_38b4167f68c2a7f8) }
@@ -181,7 +181,7 @@ func NewMsgClient(cc grpc1.ClientConn) MsgClient {
 
 func (c *msgClient) PlaceBet(ctx context.Context, in *MsgPlaceBet, opts ...grpc.CallOption) (*MsgPlaceBetResponse, error) {
 	out := new(MsgPlaceBetResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.bet.Msg/PlaceBet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.bet.Msg/PlaceBet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -216,7 +216,7 @@ func _Msg_PlaceBet_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.bet.Msg/PlaceBet",
+		FullMethod: "/fanx.bet.Msg/PlaceBet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).PlaceBet(ctx, req.(*MsgPlaceBet))
@@ -225,7 +225,7 @@ func _Msg_PlaceBet_Handler(srv interface{}, ctx context.Context, dec func(interf
 }
 
 var _Msg_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "fanx.fanx.bet.Msg",
+	ServiceName: "fanx.bet.Msg",
 	HandlerType: (*MsgServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

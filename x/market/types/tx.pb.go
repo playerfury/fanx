@@ -361,12 +361,12 @@ func (m *MsgUpdateMarketResponse) GetData() *Market {
 }
 
 func init() {
-	proto.RegisterType((*MsgAddMarket)(nil), "fanx.fanx.market.MsgAddMarket")
-	proto.RegisterType((*MsgAddMarketResponse)(nil), "fanx.fanx.market.MsgAddMarketResponse")
-	proto.RegisterType((*MsgResolveMarket)(nil), "fanx.fanx.market.MsgResolveMarket")
-	proto.RegisterType((*MsgResolveMarketResponse)(nil), "fanx.fanx.market.MsgResolveMarketResponse")
-	proto.RegisterType((*MsgUpdateMarket)(nil), "fanx.fanx.market.MsgUpdateMarket")
-	proto.RegisterType((*MsgUpdateMarketResponse)(nil), "fanx.fanx.market.MsgUpdateMarketResponse")
+	proto.RegisterType((*MsgAddMarket)(nil), "fanx.market.MsgAddMarket")
+	proto.RegisterType((*MsgAddMarketResponse)(nil), "fanx.market.MsgAddMarketResponse")
+	proto.RegisterType((*MsgResolveMarket)(nil), "fanx.market.MsgResolveMarket")
+	proto.RegisterType((*MsgResolveMarketResponse)(nil), "fanx.market.MsgResolveMarketResponse")
+	proto.RegisterType((*MsgUpdateMarket)(nil), "fanx.market.MsgUpdateMarket")
+	proto.RegisterType((*MsgUpdateMarketResponse)(nil), "fanx.market.MsgUpdateMarketResponse")
 }
 
 func init() { proto.RegisterFile("fanx/market/tx.proto", fileDescriptor_d0e875658c4f19fd) }
@@ -428,7 +428,7 @@ func NewMsgClient(cc grpc1.ClientConn) MsgClient {
 
 func (c *msgClient) AddMarket(ctx context.Context, in *MsgAddMarket, opts ...grpc.CallOption) (*MsgAddMarketResponse, error) {
 	out := new(MsgAddMarketResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.market.Msg/AddMarket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.market.Msg/AddMarket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -437,7 +437,7 @@ func (c *msgClient) AddMarket(ctx context.Context, in *MsgAddMarket, opts ...grp
 
 func (c *msgClient) ResolveMarket(ctx context.Context, in *MsgResolveMarket, opts ...grpc.CallOption) (*MsgResolveMarketResponse, error) {
 	out := new(MsgResolveMarketResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.market.Msg/ResolveMarket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.market.Msg/ResolveMarket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -446,7 +446,7 @@ func (c *msgClient) ResolveMarket(ctx context.Context, in *MsgResolveMarket, opt
 
 func (c *msgClient) UpdateMarket(ctx context.Context, in *MsgUpdateMarket, opts ...grpc.CallOption) (*MsgUpdateMarketResponse, error) {
 	out := new(MsgUpdateMarketResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.market.Msg/UpdateMarket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.market.Msg/UpdateMarket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -491,7 +491,7 @@ func _Msg_AddMarket_Handler(srv interface{}, ctx context.Context, dec func(inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.market.Msg/AddMarket",
+		FullMethod: "/fanx.market.Msg/AddMarket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).AddMarket(ctx, req.(*MsgAddMarket))
@@ -509,7 +509,7 @@ func _Msg_ResolveMarket_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.market.Msg/ResolveMarket",
+		FullMethod: "/fanx.market.Msg/ResolveMarket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).ResolveMarket(ctx, req.(*MsgResolveMarket))
@@ -527,7 +527,7 @@ func _Msg_UpdateMarket_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.market.Msg/UpdateMarket",
+		FullMethod: "/fanx.market.Msg/UpdateMarket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).UpdateMarket(ctx, req.(*MsgUpdateMarket))
@@ -536,7 +536,7 @@ func _Msg_UpdateMarket_Handler(srv interface{}, ctx context.Context, dec func(in
 }
 
 var _Msg_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "fanx.fanx.market.Msg",
+	ServiceName: "fanx.market.Msg",
 	HandlerType: (*MsgServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

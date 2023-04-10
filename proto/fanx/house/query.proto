@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.house;
+package fanx.house;
 
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "gogoproto/gogo.proto";

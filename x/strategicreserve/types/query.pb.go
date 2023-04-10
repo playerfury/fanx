@@ -1225,28 +1225,28 @@ func (m *QueryParticipationFulfilledBetsResponse) GetPagination() *query.PageRes
 }
 
 func init() {
-	proto.RegisterType((*QueryParamsRequest)(nil), "fanx.fanx.strategicreserve.QueryParamsRequest")
-	proto.RegisterType((*QueryParamsResponse)(nil), "fanx.fanx.strategicreserve.QueryParamsResponse")
-	proto.RegisterType((*QueryOrderBooksRequest)(nil), "fanx.fanx.strategicreserve.QueryOrderBooksRequest")
-	proto.RegisterType((*QueryOrderBooksResponse)(nil), "fanx.fanx.strategicreserve.QueryOrderBooksResponse")
-	proto.RegisterType((*QueryOrderBookRequest)(nil), "fanx.fanx.strategicreserve.QueryOrderBookRequest")
-	proto.RegisterType((*QueryOrderBookResponse)(nil), "fanx.fanx.strategicreserve.QueryOrderBookResponse")
-	proto.RegisterType((*QueryOrderBookParticipationsRequest)(nil), "fanx.fanx.strategicreserve.QueryOrderBookParticipationsRequest")
-	proto.RegisterType((*QueryOrderBookParticipationsResponse)(nil), "fanx.fanx.strategicreserve.QueryOrderBookParticipationsResponse")
-	proto.RegisterType((*QueryOrderBookParticipationRequest)(nil), "fanx.fanx.strategicreserve.QueryOrderBookParticipationRequest")
-	proto.RegisterType((*QueryOrderBookParticipationResponse)(nil), "fanx.fanx.strategicreserve.QueryOrderBookParticipationResponse")
-	proto.RegisterType((*QueryOrderBookExposuresRequest)(nil), "fanx.fanx.strategicreserve.QueryOrderBookExposuresRequest")
-	proto.RegisterType((*QueryOrderBookExposuresResponse)(nil), "fanx.fanx.strategicreserve.QueryOrderBookExposuresResponse")
-	proto.RegisterType((*QueryOrderBookExposureRequest)(nil), "fanx.fanx.strategicreserve.QueryOrderBookExposureRequest")
-	proto.RegisterType((*QueryOrderBookExposureResponse)(nil), "fanx.fanx.strategicreserve.QueryOrderBookExposureResponse")
-	proto.RegisterType((*QueryParticipationExposuresRequest)(nil), "fanx.fanx.strategicreserve.QueryParticipationExposuresRequest")
-	proto.RegisterType((*QueryParticipationExposuresResponse)(nil), "fanx.fanx.strategicreserve.QueryParticipationExposuresResponse")
-	proto.RegisterType((*QueryParticipationExposureRequest)(nil), "fanx.fanx.strategicreserve.QueryParticipationExposureRequest")
-	proto.RegisterType((*QueryParticipationExposureResponse)(nil), "fanx.fanx.strategicreserve.QueryParticipationExposureResponse")
-	proto.RegisterType((*QueryHistoricalParticipationExposuresRequest)(nil), "fanx.fanx.strategicreserve.QueryHistoricalParticipationExposuresRequest")
-	proto.RegisterType((*QueryHistoricalParticipationExposuresResponse)(nil), "fanx.fanx.strategicreserve.QueryHistoricalParticipationExposuresResponse")
-	proto.RegisterType((*QueryParticipationFulfilledBetsRequest)(nil), "fanx.fanx.strategicreserve.QueryParticipationFulfilledBetsRequest")
-	proto.RegisterType((*QueryParticipationFulfilledBetsResponse)(nil), "fanx.fanx.strategicreserve.QueryParticipationFulfilledBetsResponse")
+	proto.RegisterType((*QueryParamsRequest)(nil), "fanx.strategicreserve.QueryParamsRequest")
+	proto.RegisterType((*QueryParamsResponse)(nil), "fanx.strategicreserve.QueryParamsResponse")
+	proto.RegisterType((*QueryOrderBooksRequest)(nil), "fanx.strategicreserve.QueryOrderBooksRequest")
+	proto.RegisterType((*QueryOrderBooksResponse)(nil), "fanx.strategicreserve.QueryOrderBooksResponse")
+	proto.RegisterType((*QueryOrderBookRequest)(nil), "fanx.strategicreserve.QueryOrderBookRequest")
+	proto.RegisterType((*QueryOrderBookResponse)(nil), "fanx.strategicreserve.QueryOrderBookResponse")
+	proto.RegisterType((*QueryOrderBookParticipationsRequest)(nil), "fanx.strategicreserve.QueryOrderBookParticipationsRequest")
+	proto.RegisterType((*QueryOrderBookParticipationsResponse)(nil), "fanx.strategicreserve.QueryOrderBookParticipationsResponse")
+	proto.RegisterType((*QueryOrderBookParticipationRequest)(nil), "fanx.strategicreserve.QueryOrderBookParticipationRequest")
+	proto.RegisterType((*QueryOrderBookParticipationResponse)(nil), "fanx.strategicreserve.QueryOrderBookParticipationResponse")
+	proto.RegisterType((*QueryOrderBookExposuresRequest)(nil), "fanx.strategicreserve.QueryOrderBookExposuresRequest")
+	proto.RegisterType((*QueryOrderBookExposuresResponse)(nil), "fanx.strategicreserve.QueryOrderBookExposuresResponse")
+	proto.RegisterType((*QueryOrderBookExposureRequest)(nil), "fanx.strategicreserve.QueryOrderBookExposureRequest")
+	proto.RegisterType((*QueryOrderBookExposureResponse)(nil), "fanx.strategicreserve.QueryOrderBookExposureResponse")
+	proto.RegisterType((*QueryParticipationExposuresRequest)(nil), "fanx.strategicreserve.QueryParticipationExposuresRequest")
+	proto.RegisterType((*QueryParticipationExposuresResponse)(nil), "fanx.strategicreserve.QueryParticipationExposuresResponse")
+	proto.RegisterType((*QueryParticipationExposureRequest)(nil), "fanx.strategicreserve.QueryParticipationExposureRequest")
+	proto.RegisterType((*QueryParticipationExposureResponse)(nil), "fanx.strategicreserve.QueryParticipationExposureResponse")
+	proto.RegisterType((*QueryHistoricalParticipationExposuresRequest)(nil), "fanx.strategicreserve.QueryHistoricalParticipationExposuresRequest")
+	proto.RegisterType((*QueryHistoricalParticipationExposuresResponse)(nil), "fanx.strategicreserve.QueryHistoricalParticipationExposuresResponse")
+	proto.RegisterType((*QueryParticipationFulfilledBetsRequest)(nil), "fanx.strategicreserve.QueryParticipationFulfilledBetsRequest")
+	proto.RegisterType((*QueryParticipationFulfilledBetsResponse)(nil), "fanx.strategicreserve.QueryParticipationFulfilledBetsResponse")
 }
 
 func init() { proto.RegisterFile("fanx/strategicreserve/query.proto", fileDescriptor_6b5d7d659eddd962) }
@@ -1382,7 +1382,7 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error) {
 	out := new(QueryParamsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/Params", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/Params", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1391,7 +1391,7 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 
 func (c *queryClient) OrderBooks(ctx context.Context, in *QueryOrderBooksRequest, opts ...grpc.CallOption) (*QueryOrderBooksResponse, error) {
 	out := new(QueryOrderBooksResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/OrderBooks", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/OrderBooks", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1400,7 +1400,7 @@ func (c *queryClient) OrderBooks(ctx context.Context, in *QueryOrderBooksRequest
 
 func (c *queryClient) OrderBook(ctx context.Context, in *QueryOrderBookRequest, opts ...grpc.CallOption) (*QueryOrderBookResponse, error) {
 	out := new(QueryOrderBookResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/OrderBook", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/OrderBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1409,7 +1409,7 @@ func (c *queryClient) OrderBook(ctx context.Context, in *QueryOrderBookRequest, 
 
 func (c *queryClient) OrderBookParticipations(ctx context.Context, in *QueryOrderBookParticipationsRequest, opts ...grpc.CallOption) (*QueryOrderBookParticipationsResponse, error) {
 	out := new(QueryOrderBookParticipationsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/OrderBookParticipations", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/OrderBookParticipations", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1418,7 +1418,7 @@ func (c *queryClient) OrderBookParticipations(ctx context.Context, in *QueryOrde
 
 func (c *queryClient) OrderBookParticipation(ctx context.Context, in *QueryOrderBookParticipationRequest, opts ...grpc.CallOption) (*QueryOrderBookParticipationResponse, error) {
 	out := new(QueryOrderBookParticipationResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/OrderBookParticipation", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/OrderBookParticipation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1427,7 +1427,7 @@ func (c *queryClient) OrderBookParticipation(ctx context.Context, in *QueryOrder
 
 func (c *queryClient) OrderBookExposures(ctx context.Context, in *QueryOrderBookExposuresRequest, opts ...grpc.CallOption) (*QueryOrderBookExposuresResponse, error) {
 	out := new(QueryOrderBookExposuresResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/OrderBookExposures", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/OrderBookExposures", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1436,7 +1436,7 @@ func (c *queryClient) OrderBookExposures(ctx context.Context, in *QueryOrderBook
 
 func (c *queryClient) OrderBookExposure(ctx context.Context, in *QueryOrderBookExposureRequest, opts ...grpc.CallOption) (*QueryOrderBookExposureResponse, error) {
 	out := new(QueryOrderBookExposureResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/OrderBookExposure", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/OrderBookExposure", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1445,7 +1445,7 @@ func (c *queryClient) OrderBookExposure(ctx context.Context, in *QueryOrderBookE
 
 func (c *queryClient) ParticipationExposures(ctx context.Context, in *QueryParticipationExposuresRequest, opts ...grpc.CallOption) (*QueryParticipationExposuresResponse, error) {
 	out := new(QueryParticipationExposuresResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/ParticipationExposures", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/ParticipationExposures", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1454,7 +1454,7 @@ func (c *queryClient) ParticipationExposures(ctx context.Context, in *QueryParti
 
 func (c *queryClient) ParticipationExposure(ctx context.Context, in *QueryParticipationExposureRequest, opts ...grpc.CallOption) (*QueryParticipationExposureResponse, error) {
 	out := new(QueryParticipationExposureResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/ParticipationExposure", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/ParticipationExposure", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1463,7 +1463,7 @@ func (c *queryClient) ParticipationExposure(ctx context.Context, in *QueryPartic
 
 func (c *queryClient) HistoricalParticipationExposures(ctx context.Context, in *QueryHistoricalParticipationExposuresRequest, opts ...grpc.CallOption) (*QueryHistoricalParticipationExposuresResponse, error) {
 	out := new(QueryHistoricalParticipationExposuresResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/HistoricalParticipationExposures", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/HistoricalParticipationExposures", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1472,7 +1472,7 @@ func (c *queryClient) HistoricalParticipationExposures(ctx context.Context, in *
 
 func (c *queryClient) ParticipationFulfilledBets(ctx context.Context, in *QueryParticipationFulfilledBetsRequest, opts ...grpc.CallOption) (*QueryParticipationFulfilledBetsResponse, error) {
 	out := new(QueryParticipationFulfilledBetsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.strategicreserve.Query/ParticipationFulfilledBets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.strategicreserve.Query/ParticipationFulfilledBets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1564,7 +1564,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/Params",
+		FullMethod: "/fanx.strategicreserve.Query/Params",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Params(ctx, req.(*QueryParamsRequest))
@@ -1582,7 +1582,7 @@ func _Query_OrderBooks_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/OrderBooks",
+		FullMethod: "/fanx.strategicreserve.Query/OrderBooks",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).OrderBooks(ctx, req.(*QueryOrderBooksRequest))
@@ -1600,7 +1600,7 @@ func _Query_OrderBook_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/OrderBook",
+		FullMethod: "/fanx.strategicreserve.Query/OrderBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).OrderBook(ctx, req.(*QueryOrderBookRequest))
@@ -1618,7 +1618,7 @@ func _Query_OrderBookParticipations_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/OrderBookParticipations",
+		FullMethod: "/fanx.strategicreserve.Query/OrderBookParticipations",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).OrderBookParticipations(ctx, req.(*QueryOrderBookParticipationsRequest))
@@ -1636,7 +1636,7 @@ func _Query_OrderBookParticipation_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/OrderBookParticipation",
+		FullMethod: "/fanx.strategicreserve.Query/OrderBookParticipation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).OrderBookParticipation(ctx, req.(*QueryOrderBookParticipationRequest))
@@ -1654,7 +1654,7 @@ func _Query_OrderBookExposures_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/OrderBookExposures",
+		FullMethod: "/fanx.strategicreserve.Query/OrderBookExposures",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).OrderBookExposures(ctx, req.(*QueryOrderBookExposuresRequest))
@@ -1672,7 +1672,7 @@ func _Query_OrderBookExposure_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/OrderBookExposure",
+		FullMethod: "/fanx.strategicreserve.Query/OrderBookExposure",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).OrderBookExposure(ctx, req.(*QueryOrderBookExposureRequest))
@@ -1690,7 +1690,7 @@ func _Query_ParticipationExposures_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/ParticipationExposures",
+		FullMethod: "/fanx.strategicreserve.Query/ParticipationExposures",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).ParticipationExposures(ctx, req.(*QueryParticipationExposuresRequest))
@@ -1708,7 +1708,7 @@ func _Query_ParticipationExposure_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/ParticipationExposure",
+		FullMethod: "/fanx.strategicreserve.Query/ParticipationExposure",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).ParticipationExposure(ctx, req.(*QueryParticipationExposureRequest))
@@ -1726,7 +1726,7 @@ func _Query_HistoricalParticipationExposures_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/HistoricalParticipationExposures",
+		FullMethod: "/fanx.strategicreserve.Query/HistoricalParticipationExposures",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).HistoricalParticipationExposures(ctx, req.(*QueryHistoricalParticipationExposuresRequest))
@@ -1744,7 +1744,7 @@ func _Query_ParticipationFulfilledBets_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.strategicreserve.Query/ParticipationFulfilledBets",
+		FullMethod: "/fanx.strategicreserve.Query/ParticipationFulfilledBets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).ParticipationFulfilledBets(ctx, req.(*QueryParticipationFulfilledBetsRequest))
@@ -1753,7 +1753,7 @@ func _Query_ParticipationFulfilledBets_Handler(srv interface{}, ctx context.Cont
 }
 
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "fanx.fanx.strategicreserve.Query",
+	ServiceName: "fanx.strategicreserve.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

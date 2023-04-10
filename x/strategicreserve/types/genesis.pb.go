@@ -156,7 +156,7 @@ func (m *GenesisState) GetStats() OrderBookStats {
 }
 
 func init() {
-	proto.RegisterType((*GenesisState)(nil), "fanx.fanx.strategicreserve.GenesisState")
+	proto.RegisterType((*GenesisState)(nil), "fanx.strategicreserve.GenesisState")
 }
 
 func init() {

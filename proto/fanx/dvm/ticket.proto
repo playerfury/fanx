@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.dvm;
+package fanx.dvm;
 
 import "fanx/dvm/vote.proto";
 

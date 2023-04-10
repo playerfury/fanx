@@ -68,7 +68,7 @@ type OrderBook struct {
 	// odds_count is the count of the odds in the order book.
 	OddsCount uint64 `protobuf:"varint,3,opt,name=odds_count,json=oddsCount,proto3" json:"odds_count,omitempty" yaml:"odds_count"`
 	// status represents the status of the order book.
-	Status OrderBookStatus `protobuf:"varint,4,opt,name=status,proto3,enum=fanx.fanx.strategicreserve.OrderBookStatus" json:"status,omitempty"`
+	Status OrderBookStatus `protobuf:"varint,4,opt,name=status,proto3,enum=fanx.strategicreserve.OrderBookStatus" json:"status,omitempty"`
 }
 
 func (m *OrderBook) Reset()      { *m = OrderBook{} }
@@ -104,8 +104,8 @@ func (m *OrderBook) XXX_DiscardUnknown() {
 var xxx_messageInfo_OrderBook proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterEnum("fanx.fanx.strategicreserve.OrderBookStatus", OrderBookStatus_name, OrderBookStatus_value)
-	proto.RegisterType((*OrderBook)(nil), "fanx.fanx.strategicreserve.OrderBook")
+	proto.RegisterEnum("fanx.strategicreserve.OrderBookStatus", OrderBookStatus_name, OrderBookStatus_value)
+	proto.RegisterType((*OrderBook)(nil), "fanx.strategicreserve.OrderBook")
 }
 
 func init() {

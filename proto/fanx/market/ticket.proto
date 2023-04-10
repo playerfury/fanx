@@ -1,6 +1,6 @@
 
 syntax = "proto3";
-package fanx.fanx.market;
+package fanx.market;
 
 import "fanx/market/market.proto";
 import "fanx/market/odds.proto";

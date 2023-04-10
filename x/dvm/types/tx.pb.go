@@ -244,10 +244,10 @@ func (m *MsgVotePubkeysChangeResponse) GetSuccess() bool {
 }
 
 func init() {
-	proto.RegisterType((*MsgSubmitPubkeysChangeProposalRequest)(nil), "fanx.fanx.dvm.MsgSubmitPubkeysChangeProposalRequest")
-	proto.RegisterType((*MsgSubmitPubkeysChangeProposalResponse)(nil), "fanx.fanx.dvm.MsgSubmitPubkeysChangeProposalResponse")
-	proto.RegisterType((*MsgVotePubkeysChangeRequest)(nil), "fanx.fanx.dvm.MsgVotePubkeysChangeRequest")
-	proto.RegisterType((*MsgVotePubkeysChangeResponse)(nil), "fanx.fanx.dvm.MsgVotePubkeysChangeResponse")
+	proto.RegisterType((*MsgSubmitPubkeysChangeProposalRequest)(nil), "fanx.dvm.MsgSubmitPubkeysChangeProposalRequest")
+	proto.RegisterType((*MsgSubmitPubkeysChangeProposalResponse)(nil), "fanx.dvm.MsgSubmitPubkeysChangeProposalResponse")
+	proto.RegisterType((*MsgVotePubkeysChangeRequest)(nil), "fanx.dvm.MsgVotePubkeysChangeRequest")
+	proto.RegisterType((*MsgVotePubkeysChangeResponse)(nil), "fanx.dvm.MsgVotePubkeysChangeResponse")
 }
 
 func init() { proto.RegisterFile("fanx/dvm/tx.proto", fileDescriptor_78e7f1885428b6a5) }
@@ -307,7 +307,7 @@ func NewMsgClient(cc grpc1.ClientConn) MsgClient {
 
 func (c *msgClient) SubmitPubkeysChangeProposal(ctx context.Context, in *MsgSubmitPubkeysChangeProposalRequest, opts ...grpc.CallOption) (*MsgSubmitPubkeysChangeProposalResponse, error) {
 	out := new(MsgSubmitPubkeysChangeProposalResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.dvm.Msg/SubmitPubkeysChangeProposal", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.dvm.Msg/SubmitPubkeysChangeProposal", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -316,7 +316,7 @@ func (c *msgClient) SubmitPubkeysChangeProposal(ctx context.Context, in *MsgSubm
 
 func (c *msgClient) VotePubkeysChange(ctx context.Context, in *MsgVotePubkeysChangeRequest, opts ...grpc.CallOption) (*MsgVotePubkeysChangeResponse, error) {
 	out := new(MsgVotePubkeysChangeResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.dvm.Msg/VotePubkeysChange", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.dvm.Msg/VotePubkeysChange", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -358,7 +358,7 @@ func _Msg_SubmitPubkeysChangeProposal_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.dvm.Msg/SubmitPubkeysChangeProposal",
+		FullMethod: "/fanx.dvm.Msg/SubmitPubkeysChangeProposal",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).SubmitPubkeysChangeProposal(ctx, req.(*MsgSubmitPubkeysChangeProposalRequest))
@@ -376,7 +376,7 @@ func _Msg_VotePubkeysChange_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.dvm.Msg/VotePubkeysChange",
+		FullMethod: "/fanx.dvm.Msg/VotePubkeysChange",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).VotePubkeysChange(ctx, req.(*MsgVotePubkeysChangeRequest))
@@ -385,7 +385,7 @@ func _Msg_VotePubkeysChange_Handler(srv interface{}, ctx context.Context, dec fu
 }
 
 var _Msg_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "fanx.fanx.dvm.Msg",
+	ServiceName: "fanx.dvm.Msg",
 	HandlerType: (*MsgServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

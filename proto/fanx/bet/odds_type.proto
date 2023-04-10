@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.bet;
+package fanx.bet;
 
 option go_package = "github.com/playerfury/fanx/x/bet/types";
 

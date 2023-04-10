@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.house;
+package fanx.house;
 
 import "gogoproto/gogo.proto";
 import "fanx/house/withdraw.proto";

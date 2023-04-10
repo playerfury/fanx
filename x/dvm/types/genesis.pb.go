@@ -98,7 +98,7 @@ func (m *GenesisState) GetProposalStats() ProposalStats {
 }
 
 func init() {
-	proto.RegisterType((*GenesisState)(nil), "fanx.fanx.dvm.GenesisState")
+	proto.RegisterType((*GenesisState)(nil), "fanx.dvm.GenesisState")
 }
 
 func init() { proto.RegisterFile("fanx/dvm/genesis.proto", fileDescriptor_35c848c2a4360089) }

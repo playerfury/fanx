@@ -105,13 +105,13 @@ type PublicKeysChangeProposal struct {
 	// start_ts is the block time that the proposal is set.
 	StartTS int64 `protobuf:"varint,5,opt,name=start_ts,proto3" json:"start_ts"`
 	// result is the result of the finished proposal.
-	Result ProposalResult `protobuf:"varint,6,opt,name=result,proto3,enum=fanx.fanx.dvm.ProposalResult" json:"result,omitempty"`
+	Result ProposalResult `protobuf:"varint,6,opt,name=result,proto3,enum=fanx.dvm.ProposalResult" json:"result,omitempty"`
 	// result_meta is the metadata related to the result of the finished proposal.
 	ResultMeta string `protobuf:"bytes,7,opt,name=result_meta,json=resultMeta,proto3" json:"result_meta,omitempty"`
 	// finish_ts is the block time that the proposal is set as finished.
 	FinishTS int64 `protobuf:"varint,8,opt,name=finish_ts,proto3" json:"finish_ts"`
 	// status is the status of a proposal.
-	Status ProposalStatus `protobuf:"varint,9,opt,name=status,proto3,enum=fanx.fanx.dvm.ProposalStatus" json:"status,omitempty"`
+	Status ProposalStatus `protobuf:"varint,9,opt,name=status,proto3,enum=fanx.dvm.ProposalStatus" json:"status,omitempty"`
 }
 
 func (m *PublicKeysChangeProposal) Reset()         { *m = PublicKeysChangeProposal{} }
@@ -211,9 +211,9 @@ func (m *PublicKeysChangeProposal) GetStatus() ProposalStatus {
 }
 
 func init() {
-	proto.RegisterEnum("fanx.fanx.dvm.ProposalResult", ProposalResult_name, ProposalResult_value)
-	proto.RegisterEnum("fanx.fanx.dvm.ProposalStatus", ProposalStatus_name, ProposalStatus_value)
-	proto.RegisterType((*PublicKeysChangeProposal)(nil), "fanx.fanx.dvm.PublicKeysChangeProposal")
+	proto.RegisterEnum("fanx.dvm.ProposalResult", ProposalResult_name, ProposalResult_value)
+	proto.RegisterEnum("fanx.dvm.ProposalStatus", ProposalStatus_name, ProposalStatus_value)
+	proto.RegisterType((*PublicKeysChangeProposal)(nil), "fanx.dvm.PublicKeysChangeProposal")
 }
 
 func init() { proto.RegisterFile("fanx/dvm/proposal.proto", fileDescriptor_29058a11b4a243d6) }

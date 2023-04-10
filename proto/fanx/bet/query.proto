@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.bet;
+package fanx.bet;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
@@ -72,7 +72,7 @@ message QueryBetRequest {
 // Query/Bet RPC method.
 message QueryBetResponse {
   Bet bet = 1 [ (gogoproto.nullable) = false ];
-  fanx.fanx.market.Market market = 2 [ (gogoproto.nullable) = false ];
+  fanx.market.Market market = 2 [ (gogoproto.nullable) = false ];
 }
 
 // QueryBetsRequest is the request type for the bets list query

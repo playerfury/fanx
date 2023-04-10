@@ -1,6 +1,6 @@
 
 syntax = "proto3";
-package fanx.fanx.bet;
+package fanx.bet;
 
 import "gogoproto/gogo.proto";
 import "fanx/bet/bet_odds.proto";
@@ -17,5 +17,5 @@ message BetPlacementTicketPayload {
   KycDataPayload kyc_data = 2 [ (gogoproto.nullable) = false ];
   // odds_type is the type of odds that are going to be placed
   // such as decimal, fraction, moneyline.
-  fanx.fanx.bet.OddsType odds_type = 3;
+  fanx.bet.OddsType odds_type = 3;
 }

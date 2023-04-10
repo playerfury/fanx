@@ -70,7 +70,7 @@ func (m *KeyVault) GetPublicKeys() []string {
 }
 
 func init() {
-	proto.RegisterType((*KeyVault)(nil), "fanx.fanx.dvm.KeyVault")
+	proto.RegisterType((*KeyVault)(nil), "fanx.dvm.KeyVault")
 }
 
 func init() { proto.RegisterFile("fanx/dvm/key_vault.proto", fileDescriptor_a21a2d7ce8c462b6) }

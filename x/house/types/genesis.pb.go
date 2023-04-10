@@ -88,7 +88,7 @@ func (m *GenesisState) GetWithdrawalList() []Withdrawal {
 }
 
 func init() {
-	proto.RegisterType((*GenesisState)(nil), "fanx.fanx.house.GenesisState")
+	proto.RegisterType((*GenesisState)(nil), "fanx.house.GenesisState")
 }
 
 func init() { proto.RegisterFile("fanx/house/genesis.proto", fileDescriptor_aa4dcd3bb98435db) }

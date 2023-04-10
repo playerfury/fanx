@@ -447,16 +447,16 @@ func (m *QueryEndPhaseStatusResponse) GetIsInEndPhase() bool {
 }
 
 func init() {
-	proto.RegisterType((*QueryParamsRequest)(nil), "fanx.fanx.mint.QueryParamsRequest")
-	proto.RegisterType((*QueryParamsResponse)(nil), "fanx.fanx.mint.QueryParamsResponse")
-	proto.RegisterType((*QueryInflationRequest)(nil), "fanx.fanx.mint.QueryInflationRequest")
-	proto.RegisterType((*QueryInflationResponse)(nil), "fanx.fanx.mint.QueryInflationResponse")
-	proto.RegisterType((*QueryPhaseStepRequest)(nil), "fanx.fanx.mint.QueryPhaseStepRequest")
-	proto.RegisterType((*QueryPhaseStepResponse)(nil), "fanx.fanx.mint.QueryPhaseStepResponse")
-	proto.RegisterType((*QueryPhaseProvisionsRequest)(nil), "fanx.fanx.mint.QueryPhaseProvisionsRequest")
-	proto.RegisterType((*QueryPhaseProvisionsResponse)(nil), "fanx.fanx.mint.QueryPhaseProvisionsResponse")
-	proto.RegisterType((*QueryEndPhaseStatusRequest)(nil), "fanx.fanx.mint.QueryEndPhaseStatusRequest")
-	proto.RegisterType((*QueryEndPhaseStatusResponse)(nil), "fanx.fanx.mint.QueryEndPhaseStatusResponse")
+	proto.RegisterType((*QueryParamsRequest)(nil), "fanx.mint.QueryParamsRequest")
+	proto.RegisterType((*QueryParamsResponse)(nil), "fanx.mint.QueryParamsResponse")
+	proto.RegisterType((*QueryInflationRequest)(nil), "fanx.mint.QueryInflationRequest")
+	proto.RegisterType((*QueryInflationResponse)(nil), "fanx.mint.QueryInflationResponse")
+	proto.RegisterType((*QueryPhaseStepRequest)(nil), "fanx.mint.QueryPhaseStepRequest")
+	proto.RegisterType((*QueryPhaseStepResponse)(nil), "fanx.mint.QueryPhaseStepResponse")
+	proto.RegisterType((*QueryPhaseProvisionsRequest)(nil), "fanx.mint.QueryPhaseProvisionsRequest")
+	proto.RegisterType((*QueryPhaseProvisionsResponse)(nil), "fanx.mint.QueryPhaseProvisionsResponse")
+	proto.RegisterType((*QueryEndPhaseStatusRequest)(nil), "fanx.mint.QueryEndPhaseStatusRequest")
+	proto.RegisterType((*QueryEndPhaseStatusResponse)(nil), "fanx.mint.QueryEndPhaseStatusResponse")
 }
 
 func init() { proto.RegisterFile("fanx/mint/query.proto", fileDescriptor_448e6714a1bb8862) }
@@ -536,7 +536,7 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error) {
 	out := new(QueryParamsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.mint.Query/Params", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.mint.Query/Params", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -545,7 +545,7 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 
 func (c *queryClient) Inflation(ctx context.Context, in *QueryInflationRequest, opts ...grpc.CallOption) (*QueryInflationResponse, error) {
 	out := new(QueryInflationResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.mint.Query/Inflation", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.mint.Query/Inflation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -554,7 +554,7 @@ func (c *queryClient) Inflation(ctx context.Context, in *QueryInflationRequest, 
 
 func (c *queryClient) PhaseStep(ctx context.Context, in *QueryPhaseStepRequest, opts ...grpc.CallOption) (*QueryPhaseStepResponse, error) {
 	out := new(QueryPhaseStepResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.mint.Query/PhaseStep", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.mint.Query/PhaseStep", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -563,7 +563,7 @@ func (c *queryClient) PhaseStep(ctx context.Context, in *QueryPhaseStepRequest, 
 
 func (c *queryClient) PhaseProvisions(ctx context.Context, in *QueryPhaseProvisionsRequest, opts ...grpc.CallOption) (*QueryPhaseProvisionsResponse, error) {
 	out := new(QueryPhaseProvisionsResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.mint.Query/PhaseProvisions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.mint.Query/PhaseProvisions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -572,7 +572,7 @@ func (c *queryClient) PhaseProvisions(ctx context.Context, in *QueryPhaseProvisi
 
 func (c *queryClient) EndPhaseStatus(ctx context.Context, in *QueryEndPhaseStatusRequest, opts ...grpc.CallOption) (*QueryEndPhaseStatusResponse, error) {
 	out := new(QueryEndPhaseStatusResponse)
-	err := c.cc.Invoke(ctx, "/fanx.fanx.mint.Query/EndPhaseStatus", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fanx.mint.Query/EndPhaseStatus", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -627,7 +627,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.mint.Query/Params",
+		FullMethod: "/fanx.mint.Query/Params",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Params(ctx, req.(*QueryParamsRequest))
@@ -645,7 +645,7 @@ func _Query_Inflation_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.mint.Query/Inflation",
+		FullMethod: "/fanx.mint.Query/Inflation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Inflation(ctx, req.(*QueryInflationRequest))
@@ -663,7 +663,7 @@ func _Query_PhaseStep_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.mint.Query/PhaseStep",
+		FullMethod: "/fanx.mint.Query/PhaseStep",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).PhaseStep(ctx, req.(*QueryPhaseStepRequest))
@@ -681,7 +681,7 @@ func _Query_PhaseProvisions_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.mint.Query/PhaseProvisions",
+		FullMethod: "/fanx.mint.Query/PhaseProvisions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).PhaseProvisions(ctx, req.(*QueryPhaseProvisionsRequest))
@@ -699,7 +699,7 @@ func _Query_EndPhaseStatus_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fanx.fanx.mint.Query/EndPhaseStatus",
+		FullMethod: "/fanx.mint.Query/EndPhaseStatus",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).EndPhaseStatus(ctx, req.(*QueryEndPhaseStatusRequest))
@@ -708,7 +708,7 @@ func _Query_EndPhaseStatus_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "fanx.fanx.mint.Query",
+	ServiceName: "fanx.mint.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

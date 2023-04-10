@@ -82,7 +82,7 @@ func (m *Deposit) XXX_DiscardUnknown() {
 var xxx_messageInfo_Deposit proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*Deposit)(nil), "fanx.fanx.house.Deposit")
+	proto.RegisterType((*Deposit)(nil), "fanx.house.Deposit")
 }
 
 func init() { proto.RegisterFile("fanx/house/deposit.proto", fileDescriptor_c6f2840908fc45a1) }

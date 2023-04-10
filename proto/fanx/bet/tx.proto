@@ -1,5 +1,5 @@
 syntax = "proto3";
-package fanx.fanx.bet;
+package fanx.bet;
 
 import "fanx/bet/place_bet_fields.proto";
 
