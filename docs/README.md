@@ -1,6 +1,6 @@
 # FURY Network
 
-The Sports, Gaming & Entertainment Network (FURY Network), is a blockchain
+The Fanfury Network (FURY Network), is a blockchain
 designed to support the future of sports betting & related gaming by leveraging
 the modular Cosmos design. We believe the future will be heavily shaped by many
 of the values driving the recent wave of crypto and blockchain development:
