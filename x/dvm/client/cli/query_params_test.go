@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	"github.com/playerfury/furyx/testutil/network"
-	"github.com/playerfury/furyx/x/dvm/client/cli"
-	"github.com/playerfury/furyx/x/dvm/types"
+	"github.com/playerfury/fanx/testutil/network"
+	"github.com/playerfury/fanx/x/dvm/client/cli"
+	"github.com/playerfury/fanx/x/dvm/types"
 	"github.com/stretchr/testify/require"
 )
 

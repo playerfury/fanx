@@ -1,10 +1,10 @@
 syntax = "proto3";
-package furyx.furyx.market;
+package fanx.fanx.market;
 
 import "gogoproto/gogo.proto";
-import "furyx/market/odds.proto";
+import "fanx/market/odds.proto";
 
-option go_package = "github.com/playerfury/furyx/x/market/types";
+option go_package = "github.com/playerfury/fanx/x/market/types";
 
 // Market is the representation of the market to be stored in
 // the market state.

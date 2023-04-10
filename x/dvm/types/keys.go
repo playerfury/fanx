@@ -1,6 +1,6 @@
 package types
 
-import "github.com/playerfury/furyx/utils"
+import "github.com/playerfury/fanx/utils"
 
 // module constants
 const (

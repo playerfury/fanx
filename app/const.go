@@ -1,3 +1,3 @@
 package app
 
-const appName = "furyx"
+const appName = "fanx"

@@ -1,9 +1,9 @@
 syntax = "proto3";
-package furyx.furyx.bet;
+package fanx.fanx.bet;
 
-import "furyx/bet/place_bet_fields.proto";
+import "fanx/bet/place_bet_fields.proto";
 
-option go_package = "github.com/playerfury/furyx/x/bet/types";
+option go_package = "github.com/playerfury/fanx/x/bet/types";
 
 // Msg defines the Msg service.
 service Msg {

@@ -1,12 +1,12 @@
 
 syntax = "proto3";
-package furyx.furyx.market;
+package fanx.fanx.market;
 
-import "furyx/market/market.proto";
-import "furyx/market/odds.proto";
+import "fanx/market/market.proto";
+import "fanx/market/odds.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/playerfury/furyx/x/market/types";
+option go_package = "github.com/playerfury/fanx/x/market/types";
 
 // MarketAddTicketPayload indicates data of add market ticket
 message MarketAddTicketPayload {

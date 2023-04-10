@@ -6,10 +6,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/spf13/cast"
 
-	"github.com/playerfury/furyx/testutil/nullify"
-	simappUtil "github.com/playerfury/furyx/testutil/simapp"
-	"github.com/playerfury/furyx/x/bet/keeper"
-	"github.com/playerfury/furyx/x/bet/types"
+	"github.com/playerfury/fanx/testutil/nullify"
+	simappUtil "github.com/playerfury/fanx/testutil/simapp"
+	"github.com/playerfury/fanx/x/bet/keeper"
+	"github.com/playerfury/fanx/x/bet/types"
 	"github.com/stretchr/testify/require"
 )
 

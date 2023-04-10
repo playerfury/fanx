@@ -1,9 +1,9 @@
 syntax = "proto3";
-package furyx.furyx.dvm;
+package fanx.fanx.dvm;
 
-import "furyx/dvm/vote.proto";
+import "fanx/dvm/vote.proto";
 
-option go_package = "github.com/playerfury/furyx/x/dvm/types";
+option go_package = "github.com/playerfury/fanx/x/dvm/types";
 
 // PubkeysChangeProposalPayload indicates data of public keys changes proposal
 // ticket.

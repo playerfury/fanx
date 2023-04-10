@@ -12,10 +12,10 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/playerfury/furyx/testutil/network"
-	"github.com/playerfury/furyx/testutil/nullify"
-	"github.com/playerfury/furyx/x/market/client/cli"
-	"github.com/playerfury/furyx/x/market/types"
+	"github.com/playerfury/fanx/testutil/network"
+	"github.com/playerfury/fanx/testutil/nullify"
+	"github.com/playerfury/fanx/x/market/client/cli"
+	"github.com/playerfury/fanx/x/market/types"
 )
 
 func networkWithMarketObjects(t *testing.T, n int) (*network.Network, []types.Market) {

@@ -1,52 +1,52 @@
 syntax = "proto3";
-package furyx.furyx.bet;
+package fanx.fanx.bet;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
-import "furyx/bet/params.proto";
-import "furyx/bet/bet.proto";
-import "furyx/market/market.proto";
+import "fanx/bet/params.proto";
+import "fanx/bet/bet.proto";
+import "fanx/market/market.proto";
 
-option go_package = "github.com/playerfury/furyx/x/bet/types";
+option go_package = "github.com/playerfury/fanx/x/bet/types";
 
 // Query defines the gRPC querier service.
 service Query {
   // Params queries the parameters of the module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/furyx/bet/params";
+    option (google.api.http).get = "/fanx/bet/params";
   }
 
   // Queries a Bet by uid.
   rpc Bet(QueryBetRequest) returns (QueryBetResponse) {
-    option (google.api.http).get = "/furyx/bet/{creator}/{uid}";
+    option (google.api.http).get = "/fanx/bet/{creator}/{uid}";
   }
 
   // Queries list of Bet items of a certain creator sorted by timestamp.
   rpc BetsByCreator(QueryBetsByCreatorRequest)
       returns (QueryBetsByCreatorResponse) {
-    option (google.api.http).get = "/furyx/bet/creator/{creator}/bets";
+    option (google.api.http).get = "/fanx/bet/creator/{creator}/bets";
   }
 
   // Queries list of Bet items.
   rpc Bets(QueryBetsRequest) returns (QueryBetsResponse) {
-    option (google.api.http).get = "/furyx/bet/bets";
+    option (google.api.http).get = "/fanx/bet/bets";
   }
 
   // Queries list of pending Bet items.
   rpc PendingBets(QueryPendingBetsRequest) returns (QueryPendingBetsResponse) {
-    option (google.api.http).get = "/furyx/bet/bets/pending/{market_uid}";
+    option (google.api.http).get = "/fanx/bet/bets/pending/{market_uid}";
   }
 
   // Queries list of settled Bet items of a certain height.
   rpc SettledBetsOfHeight(QuerySettledBetsOfHeightRequest)
       returns (QuerySettledBetsOfHeightResponse) {
-    option (google.api.http).get = "/furyx/bet/bets/settled/{block_height}";
+    option (google.api.http).get = "/fanx/bet/bets/settled/{block_height}";
   }
 
   // Queries a list of Bet items filtered by uid list.
   rpc BetsByUIDs(QueryBetsByUIDsRequest) returns (QueryBetsByUIDsResponse) {
-    option (google.api.http).get = "/furyx/bet/bets-by-uids/{items}";
+    option (google.api.http).get = "/fanx/bet/bets-by-uids/{items}";
   }
 }
 
@@ -72,7 +72,7 @@ message QueryBetRequest {
 // Query/Bet RPC method.
 message QueryBetResponse {
   Bet bet = 1 [ (gogoproto.nullable) = false ];
-  furyx.furyx.market.Market market = 2 [ (gogoproto.nullable) = false ];
+  fanx.fanx.market.Market market = 2 [ (gogoproto.nullable) = false ];
 }
 
 // QueryBetsRequest is the request type for the bets list query

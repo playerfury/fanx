@@ -20,13 +20,13 @@ import (
 	ibctransfertypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
 	ibchost "github.com/cosmos/ibc-go/v3/modules/core/24-host"
 
-	betmoduletypes "github.com/playerfury/furyx/x/bet/types"
-	dvmmoduletypes "github.com/playerfury/furyx/x/dvm/types"
+	betmoduletypes "github.com/playerfury/fanx/x/bet/types"
+	dvmmoduletypes "github.com/playerfury/fanx/x/dvm/types"
 
-	housemoduletypes "github.com/playerfury/furyx/x/house/types"
-	marketmoduletypes "github.com/playerfury/furyx/x/market/types"
-	minttypes "github.com/playerfury/furyx/x/mint/types"
-	strategicreservemoduletypes "github.com/playerfury/furyx/x/strategicreserve/types"
+	housemoduletypes "github.com/playerfury/fanx/x/house/types"
+	marketmoduletypes "github.com/playerfury/fanx/x/market/types"
+	minttypes "github.com/playerfury/fanx/x/mint/types"
+	strategicreservemoduletypes "github.com/playerfury/fanx/x/strategicreserve/types"
 
 	// unnamed import of statik for swagger UI support
 	_ "github.com/cosmos/cosmos-sdk/client/docs/statik"

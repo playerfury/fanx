@@ -47,10 +47,10 @@ Fury could be installed by two ways - downloading binary from releases page or b
 
 - Check sha256 hash sum
 
-- Place furyx into /usr/local/sbin
+- Place fanx into /usr/local/sbin
 
 ```shell
-sudo mv furyx /usr/local/sbin/furyx
+sudo mv fanx /usr/local/sbin/fanx
 ```
 
 ### Building from source
@@ -60,7 +60,7 @@ sudo mv furyx /usr/local/sbin/furyx
 - Clone git repository
 
 ```shell
-git clone https://github.com/playerfury/furyx.git
+git clone https://github.com/playerfury/fanx.git
 ```
 
 - Checkout release tag
@@ -73,7 +73,7 @@ git checkout [vX.X.X]
 - Install
 
 ```shell
-cd furyx
+cd fanx
 go mod tidy
 make install
 ```
@@ -81,7 +81,7 @@ make install
 ### Install system.d service file
 
 ```shell
-nano /etc/systemd/system/furyx.service
+nano /etc/systemd/system/fanx.service
 ```
 
 Please following contents(working dir may be changed as needed)
@@ -95,7 +95,7 @@ After=network.target
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu
-ExecStart=/usr/local/sbin/furyx start
+ExecStart=/usr/local/sbin/fanx start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=40960
@@ -112,29 +112,29 @@ sudo systemctl daemon-reload
 
 ### Generate keys
 
-`furyx keys add [key_name]`
+`fanx keys add [key_name]`
 
 or
 
-`furyx keys add [key_name] --recover` to regenerate keys with your [BIP39](https://github.com/bitcoin/bips/tree/master/bip-0039) mnemonic
+`fanx keys add [key_name] --recover` to regenerate keys with your [BIP39](https://github.com/bitcoin/bips/tree/master/bip-0039) mnemonic
 
 ### Connect to a chain and start node
 
-- [Install](#installation-steps) furyx application
+- [Install](#installation-steps) fanx application
 - Initialize node
 
 ```shell
-furyx init {{NODE_NAME}} --chain-id furyx-network-2
+fanx init {{NODE_NAME}} --chain-id fanx-network-2
 ```
 
 Select network to join
 
-- Replace `${HOME}/.furyx/config/genesis.json` with the genesis file of the chain.
-- Add `persistent_peers` or `seeds` in `${HOME}/.furyx/config/config.toml`
+- Replace `${HOME}/.fanx/config/genesis.json` with the genesis file of the chain.
+- Add `persistent_peers` or `seeds` in `${HOME}/.fanx/config/config.toml`
 - Start node
 
 ```shell
-furyx start
+fanx start
 ```
 
 ## Network Compatibility Matrix
@@ -151,58 +151,58 @@ Coming Soon!!
 
 ### Testnet
 
-- [furyx-network-2](https://github.com/furyx-network/networks/tree/master/furyx-network-2)
+- [fanx-network-2](https://github.com/fanx-network/networks/tree/master/fanx-network-2)
 
 - Place the genesis file  with the genesis file of the chain.
 
 ```shell
-wget https://github.com/furyx-network/networks/blob/master/furyx-network-2/genesis.json -O ~/.furyx/config/genesis.json
+wget https://github.com/fanx-network/networks/blob/master/fanx-network-2/genesis.json -O ~/.fanx/config/genesis.json
 ```
 
 Verify genesis hash sum
 
 ```shell
-sha256sum ~/.furyx/config/genesis.json
+sha256sum ~/.fanx/config/genesis.json
 ```
 
-Correct sha256 sum for furyx-network-2 is - 2bea72699f9c1afd6217f7e76f14f07c1fbe849d090fc37cd008a42d14d5d30c
+Correct sha256 sum for fanx-network-2 is - 2bea72699f9c1afd6217f7e76f14f07c1fbe849d090fc37cd008a42d14d5d30c
 Genesis file sha sum is published in according repository.
 
-- Add `persistent_peers` or `seeds` in `${HOME}/.furyx/config/config.toml`
+- Add `persistent_peers` or `seeds` in `${HOME}/.fanx/config/config.toml`
 
 ```shell
-sed -i '/s/persistent_peers = ""/persistent_peers = "4980b478f91de9be0564a547779e5c6cb07eb995@3.239.15.80:26656,0e7042be1b77707aaf0597bb804da90d3a606c08@3.88.40.53:26656/g' $HOME/.furyx/config/config.toml
+sed -i '/s/persistent_peers = ""/persistent_peers = "4980b478f91de9be0564a547779e5c6cb07eb995@3.239.15.80:26656,0e7042be1b77707aaf0597bb804da90d3a606c08@3.88.40.53:26656/g' $HOME/.fanx/config/config.toml
 ```
 
 - Start node
 
 ```shell
-furyx start
+fanx start
 ```
 
 ### Initialize a new chain and start node
 
-- Initialize: `furyx init [node_name] --chain-id [chain_name]`
-- Add key for genesis account `furyx keys add [genesis_key_name]`
-- Add genesis account `furyx add-genesis-account [genesis_key_name] 10000000000000000000ufuryx`
-- Create a validator at genesis `furyx gentx [genesis_key_name] 10000000ufuryx --chain-id [chain_name]`
-- Collect genesis transactions `furyx collect-gentxs`
-- Start node `furyx start`
+- Initialize: `fanx init [node_name] --chain-id [chain_name]`
+- Add key for genesis account `fanx keys add [genesis_key_name]`
+- Add genesis account `fanx add-genesis-account [genesis_key_name] 10000000000000000000ufanx`
+- Create a validator at genesis `fanx gentx [genesis_key_name] 10000000ufanx --chain-id [chain_name]`
+- Collect genesis transactions `fanx collect-gentxs`
+- Start node `fanx start`
 
 ### Reset chain
 
 ```shell
-rm -rf ~/.furyx
+rm -rf ~/.fanx
 ```
 
 ### Shutdown node
 
 ```shell
-killall furyx
+killall fanx
 ```
 
 ### Check version
 
 ```shell
-furyx version
+fanx version
 ```

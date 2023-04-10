@@ -1,9 +1,9 @@
 syntax = "proto3";
-package furyx.furyx.bet;
+package fanx.fanx.bet;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/playerfury/furyx/x/bet/types";
+option go_package = "github.com/playerfury/fanx/x/bet/types";
 
 // PlaceBetFields contains attributes which come in Place bet tx request.
 message PlaceBetFields {

@@ -1,12 +1,12 @@
 syntax = "proto3";
-package furyx.furyx.bet;
+package fanx.fanx.bet;
 
 import "gogoproto/gogo.proto";
-import "furyx/bet/params.proto";
-import "furyx/bet/bet.proto";
-import "furyx/bet/stats.proto";
+import "fanx/bet/params.proto";
+import "fanx/bet/bet.proto";
+import "fanx/bet/stats.proto";
 
-option go_package = "github.com/playerfury/furyx/x/bet/types";
+option go_package = "github.com/playerfury/fanx/x/bet/types";
 
 // GenesisState defines the bet module's genesis state.
 message GenesisState {

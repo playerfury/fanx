@@ -17,12 +17,12 @@ import (
 	stakingKeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	"github.com/cosmos/cosmos-sdk/x/staking/teststaking"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/playerfury/furyx/app"
-	"github.com/playerfury/furyx/app/params"
-	"github.com/playerfury/furyx/utils"
-	dvmtypes "github.com/playerfury/furyx/x/dvm/types"
-	mintmoduletypes "github.com/playerfury/furyx/x/mint/types"
-	strategicreservetypes "github.com/playerfury/furyx/x/strategicreserve/types"
+	"github.com/playerfury/fanx/app"
+	"github.com/playerfury/fanx/app/params"
+	"github.com/playerfury/fanx/utils"
+	dvmtypes "github.com/playerfury/fanx/x/dvm/types"
+	mintmoduletypes "github.com/playerfury/fanx/x/mint/types"
+	strategicreservetypes "github.com/playerfury/fanx/x/strategicreserve/types"
 	"github.com/spf13/cast"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
@@ -32,7 +32,7 @@ import (
 	tmdb "github.com/tendermint/tm-db"
 )
 
-// TestApp is used as a container of the furyx app
+// TestApp is used as a container of the fanx app
 type TestApp struct {
 	app.FuryApp
 }

@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/playerfury/furyx/x/dvm/types"
+	"github.com/playerfury/fanx/x/dvm/types"
 )
 
 type msgServer struct {

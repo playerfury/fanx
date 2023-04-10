@@ -1,39 +1,39 @@
 syntax = "proto3";
-package furyx.furyx.strategicreserve;
+package fanx.fanx.strategicreserve;
 
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "furyx/strategicreserve/params.proto";
-import "furyx/strategicreserve/orderbook.proto";
-import "furyx/strategicreserve/participation.proto";
-import "furyx/strategicreserve/exposure.proto";
+import "fanx/strategicreserve/params.proto";
+import "fanx/strategicreserve/orderbook.proto";
+import "fanx/strategicreserve/participation.proto";
+import "fanx/strategicreserve/exposure.proto";
 
-option go_package = "github.com/playerfury/furyx/x/strategicreserve/types";
+option go_package = "github.com/playerfury/fanx/x/strategicreserve/types";
 
 // Query defines the gRPC querier service.
 service Query {
   // Params queries the parameters of the module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/furyx/strategicreserve/params";
+    option (google.api.http).get = "/fanx/strategicreserve/params";
   }
 
   // OrderBooks queries all order books that match the given status.
   rpc OrderBooks(QueryOrderBooksRequest) returns (QueryOrderBooksResponse) {
-    option (google.api.http).get = "/furyx/orderbooks/{status}";
+    option (google.api.http).get = "/fanx/orderbooks/{status}";
   }
 
   // OrderBook queries order book info for given order book universal unique
   // identifier.
   rpc OrderBook(QueryOrderBookRequest) returns (QueryOrderBookResponse) {
-    option (google.api.http).get = "/furyx/orderbooks/{order_book_uid}";
+    option (google.api.http).get = "/fanx/orderbooks/{order_book_uid}";
   }
 
   // OrderBookParticipations queries participation info for given order book.
   rpc OrderBookParticipations(QueryOrderBookParticipationsRequest)
       returns (QueryOrderBookParticipationsResponse) {
     option (google.api.http).get =
-        "/furyx/orderbooks/{order_book_uid}/participations";
+        "/fanx/orderbooks/{order_book_uid}/participations";
   }
 
   // OrderBookParticipation queries participation info for given order book and
@@ -41,13 +41,13 @@ service Query {
   rpc OrderBookParticipation(QueryOrderBookParticipationRequest)
       returns (QueryOrderBookParticipationResponse) {
     option (google.api.http).get =
-        "/furyx/orderbooks/{order_book_uid}/participations/{participation_index}";
+        "/fanx/orderbooks/{order_book_uid}/participations/{participation_index}";
   }
 
   // OrderBookExposures queries exposures info for the given order book.
   rpc OrderBookExposures(QueryOrderBookExposuresRequest)
       returns (QueryOrderBookExposuresResponse) {
-    option (google.api.http).get = "/furyx/orderbooks/{order_book_uid}/exposures";
+    option (google.api.http).get = "/fanx/orderbooks/{order_book_uid}/exposures";
   }
 
   // OrderBookExposure queries exposure info for the given order book and odds
@@ -55,7 +55,7 @@ service Query {
   rpc OrderBookExposure(QueryOrderBookExposureRequest)
       returns (QueryOrderBookExposureResponse) {
     option (google.api.http).get =
-        "/furyx/orderbooks/{order_book_uid}/exposures/{odds_uid}";
+        "/fanx/orderbooks/{order_book_uid}/exposures/{odds_uid}";
   }
 
   // ParticipationExposures queries exposures info for given order book
@@ -63,7 +63,7 @@ service Query {
   rpc ParticipationExposures(QueryParticipationExposuresRequest)
       returns (QueryParticipationExposuresResponse) {
     option (google.api.http).get =
-        "/furyx/orderbooks/{order_book_uid}/participation-exposures";
+        "/fanx/orderbooks/{order_book_uid}/participation-exposures";
   }
 
   // ParticipationExposure queries exposure info for given order book
@@ -71,7 +71,7 @@ service Query {
   rpc ParticipationExposure(QueryParticipationExposureRequest)
       returns (QueryParticipationExposureResponse) {
     option (google.api.http).get =
-        "/furyx/orderbooks/{order_book_uid}/participation-exposures/"
+        "/fanx/orderbooks/{order_book_uid}/participation-exposures/"
         "{participation_index}";
   }
 
@@ -81,7 +81,7 @@ service Query {
       QueryHistoricalParticipationExposuresRequest)
       returns (QueryHistoricalParticipationExposuresResponse) {
     option (google.api.http).get =
-        "/furyx/orderbooks/{order_book_uid}/historical-participation-exposures";
+        "/fanx/orderbooks/{order_book_uid}/historical-participation-exposures";
   }
 
   // ParticipationFulfilledBets queries fulfilled bets for given order book
@@ -89,7 +89,7 @@ service Query {
   rpc ParticipationFulfilledBets(QueryParticipationFulfilledBetsRequest)
       returns (QueryParticipationFulfilledBetsResponse) {
     option (google.api.http).get =
-        "/furyx/orderbooks/{order_book_uid}/participations/"
+        "/fanx/orderbooks/{order_book_uid}/participations/"
         "{participation_index}/fulfilled_bets";
   }
 }

@@ -1,12 +1,12 @@
 syntax = "proto3";
-package furyx.furyx.market;
+package fanx.fanx.market;
 
 import "gogoproto/gogo.proto";
-import "furyx/market/params.proto";
-import "furyx/market/market.proto";
-import "furyx/market/stats.proto";
+import "fanx/market/params.proto";
+import "fanx/market/market.proto";
+import "fanx/market/stats.proto";
 
-option go_package = "github.com/playerfury/furyx/x/market/types";
+option go_package = "github.com/playerfury/fanx/x/market/types";
 
 // GenesisState defines the market module's genesis state.
 message GenesisState {

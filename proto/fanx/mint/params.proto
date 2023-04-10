@@ -1,10 +1,10 @@
 syntax = "proto3";
-package furyx.furyx.mint;
+package fanx.fanx.mint;
 
 import "gogoproto/gogo.proto";
-import "furyx/mint/phase.proto";
+import "fanx/mint/phase.proto";
 
-option go_package = "github.com/playerfury/furyx/x/mint/types";
+option go_package = "github.com/playerfury/fanx/x/mint/types";
 
 // Params define the parameters for the module.
 message Params {

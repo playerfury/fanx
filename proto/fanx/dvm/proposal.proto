@@ -1,11 +1,11 @@
 syntax = "proto3";
-package furyx.furyx.dvm;
+package fanx.fanx.dvm;
 
 import "gogoproto/gogo.proto";
-import "furyx/dvm/ticket.proto";
-import "furyx/dvm/vote.proto";
+import "fanx/dvm/ticket.proto";
+import "fanx/dvm/vote.proto";
 
-option go_package = "github.com/playerfury/furyx/x/dvm/types";
+option go_package = "github.com/playerfury/fanx/x/dvm/types";
 
 // PublicKeysChangeProposal is the type for the proposal for additions and
 // removals of pub keys.

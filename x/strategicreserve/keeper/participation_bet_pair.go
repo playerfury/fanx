@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/playerfury/furyx/x/strategicreserve/types"
+	"github.com/playerfury/fanx/x/strategicreserve/types"
 )
 
 // SetParticipationBetPair sets a participation bet pair.

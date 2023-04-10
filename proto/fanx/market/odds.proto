@@ -1,9 +1,9 @@
 syntax = "proto3";
-package furyx.furyx.market;
+package fanx.fanx.market;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/playerfury/furyx/x/market/types";
+option go_package = "github.com/playerfury/fanx/x/market/types";
 
 // Odds is a representation of market odds.
 message Odds {

@@ -6,7 +6,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/playerfury/furyx/x/mint/types"
+	"github.com/playerfury/fanx/x/mint/types"
 	"github.com/stretchr/testify/require"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -15,7 +15,7 @@ import (
 func TestPhaseInflation(t *testing.T) {
 	params := types.DefaultParams()
 	// Governing Mechanism:
-	// furyx tokenomics
+	// fanx tokenomics
 
 	tests := []struct {
 		phase        int

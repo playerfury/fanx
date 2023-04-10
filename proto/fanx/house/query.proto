@@ -1,37 +1,37 @@
 syntax = "proto3";
-package furyx.furyx.house;
+package fanx.fanx.house;
 
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "furyx/house/params.proto";
-import "furyx/house/deposit.proto";
-import "furyx/house/withdraw.proto";
+import "fanx/house/params.proto";
+import "fanx/house/deposit.proto";
+import "fanx/house/withdraw.proto";
 
-option go_package = "github.com/playerfury/furyx/x/house/types";
+option go_package = "github.com/playerfury/fanx/x/house/types";
 
 // Query defines the gRPC querier service.
 service Query {
   // Params queries the parameters of the module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/furyx/house/params";
+    option (google.api.http).get = "/fanx/house/params";
   }
 
   // Deposits queries all deposits.
   rpc Deposits(QueryDepositsRequest) returns (QueryDepositsResponse) {
-    option (google.api.http).get = "/furyx/house/deposits";
+    option (google.api.http).get = "/fanx/house/deposits";
   }
 
   // DepositsByAccount queries deposits info for given account.
   rpc DepositsByAccount(QueryDepositsByAccountRequest)
       returns (QueryDepositsByAccountResponse) {
-    option (google.api.http).get = "/furyx/house/deposits/{address}";
+    option (google.api.http).get = "/fanx/house/deposits/{address}";
   }
 
   // WithdrawalsByAccount queries withdrawals info for given account.
   rpc WithdrawalsByAccount(QueryWithdrawalsByAccountRequest)
       returns (QueryWithdrawalsByAccountResponse) {
-    option (google.api.http).get = "/furyx/house/withdrawals/{address}";
+    option (google.api.http).get = "/fanx/house/withdrawals/{address}";
   }
 }
 

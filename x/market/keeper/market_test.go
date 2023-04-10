@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/playerfury/furyx/testutil/nullify"
-	"github.com/playerfury/furyx/x/market/keeper"
-	"github.com/playerfury/furyx/x/market/types"
+	"github.com/playerfury/fanx/testutil/nullify"
+	"github.com/playerfury/fanx/x/market/keeper"
+	"github.com/playerfury/fanx/x/market/types"
 	"github.com/spf13/cast"
 	"github.com/stretchr/testify/require"
 )

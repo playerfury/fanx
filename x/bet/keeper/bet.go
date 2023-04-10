@@ -3,8 +3,8 @@ package keeper
 import (
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/playerfury/furyx/utils"
-	"github.com/playerfury/furyx/x/bet/types"
+	"github.com/playerfury/fanx/utils"
+	"github.com/playerfury/fanx/x/bet/types"
 )
 
 // SetBet sets a specific bet in the store

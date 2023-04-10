@@ -68,7 +68,7 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 # process linker flags
 
 ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=fury \
-		  -X github.com/cosmos/cosmos-sdk/version.AppName=furyx \
+		  -X github.com/cosmos/cosmos-sdk/version.AppName=fanx \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
 		  -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)" \
@@ -145,7 +145,7 @@ go.sum: go.mod
 draw-deps:
 	@# requires brew install graphviz or apt-get install graphviz
 	go get github.com/RobotsAndPencils/goviz
-	@goviz -i ./cmd/furyx -d 2 | dot -Tpng -o dependency-graph.png
+	@goviz -i ./cmd/fanx -d 2 | dot -Tpng -o dependency-graph.png
 
 clean:
 	rm -rf $(CURDIR)/artifacts/
@@ -275,7 +275,7 @@ update-swagger-docs: statik
 .PHONY: update-swagger-docs
 
 godocs:
-	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/playerfury/furyx/types"
+	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/playerfury/fanx/types"
 	godoc -http=:6060
 
 # This builds a docs site for each branch/tag in `./docs/versions`

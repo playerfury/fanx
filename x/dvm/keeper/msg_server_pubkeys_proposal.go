@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/playerfury/furyx/utils"
-	"github.com/playerfury/furyx/x/dvm/types"
+	"github.com/playerfury/fanx/utils"
+	"github.com/playerfury/fanx/x/dvm/types"
 )
 
 // SubmitPubkeysChangeProposal is the main transaction of DVM to add or delete the keys to the chain.

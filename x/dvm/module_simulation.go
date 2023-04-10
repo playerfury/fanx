@@ -10,9 +10,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/playerfury/furyx/testutil/sample"
-	dvmsimulation "github.com/playerfury/furyx/x/dvm/simulation"
-	"github.com/playerfury/furyx/x/dvm/types"
+	"github.com/playerfury/fanx/testutil/sample"
+	dvmsimulation "github.com/playerfury/fanx/x/dvm/simulation"
+	"github.com/playerfury/fanx/x/dvm/types"
 )
 
 // avoid unused import issue

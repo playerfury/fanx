@@ -3,10 +3,10 @@ package mint_test
 import (
 	"testing"
 
-	"github.com/playerfury/furyx/testutil/nullify"
-	simappUtil "github.com/playerfury/furyx/testutil/simapp"
-	"github.com/playerfury/furyx/x/mint"
-	"github.com/playerfury/furyx/x/mint/types"
+	"github.com/playerfury/fanx/testutil/nullify"
+	simappUtil "github.com/playerfury/fanx/testutil/simapp"
+	"github.com/playerfury/fanx/x/mint"
+	"github.com/playerfury/fanx/x/mint/types"
 	"github.com/stretchr/testify/require"
 )
 

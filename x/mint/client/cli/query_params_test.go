@@ -6,9 +6,9 @@ import (
 	"testing"
 
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	"github.com/playerfury/furyx/testutil/network"
-	"github.com/playerfury/furyx/x/mint/client/cli"
-	"github.com/playerfury/furyx/x/mint/types"
+	"github.com/playerfury/fanx/testutil/network"
+	"github.com/playerfury/fanx/x/mint/client/cli"
+	"github.com/playerfury/fanx/x/mint/types"
 	"github.com/stretchr/testify/require"
 )
 

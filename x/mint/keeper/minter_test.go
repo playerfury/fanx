@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/playerfury/furyx/app/params"
+	"github.com/playerfury/fanx/app/params"
 	"github.com/stretchr/testify/require"
 )
 

@@ -4,8 +4,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/playerfury/furyx/app/params"
-	"github.com/playerfury/furyx/x/strategicreserve/types"
+	"github.com/playerfury/fanx/app/params"
+	"github.com/playerfury/fanx/x/strategicreserve/types"
 )
 
 // transferFundsFromAccountToModule transfers the given amount from
@@ -13,10 +13,10 @@ import (
 // Returns an error if the account holder has insufficient balance.
 func (k Keeper) transferFundsFromAccountToModule(ctx sdk.Context, address sdk.AccAddress, moduleAccName string, amount sdk.Int) error {
 	// Get the spendable balance of the account holder
-	ufuryxCoins := k.bankKeeper.SpendableCoins(ctx, address).AmountOf(params.BaseCoinUnit)
+	ufanxCoins := k.bankKeeper.SpendableCoins(ctx, address).AmountOf(params.BaseCoinUnit)
 
 	// If account holder has insufficient balance, return error
-	if ufuryxCoins.LT(amount) {
+	if ufanxCoins.LT(amount) {
 		return sdkerrors.Wrapf(types.ErrInsufficientAccountBalance, "account Address: %s", address.String())
 	}
 

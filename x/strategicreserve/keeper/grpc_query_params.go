@@ -4,7 +4,7 @@ import (
 	"context"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/playerfury/furyx/x/strategicreserve/types"
+	"github.com/playerfury/fanx/x/strategicreserve/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

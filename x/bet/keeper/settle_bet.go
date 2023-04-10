@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/playerfury/furyx/x/bet/types"
-	markettypes "github.com/playerfury/furyx/x/market/types"
+	"github.com/playerfury/fanx/x/bet/types"
+	markettypes "github.com/playerfury/fanx/x/market/types"
 )
 
 // singlePageNum used to return single page result in pagination.

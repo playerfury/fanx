@@ -2,7 +2,7 @@ package app
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/playerfury/furyx/app/params"
+	"github.com/playerfury/fanx/app/params"
 )
 
 const (
