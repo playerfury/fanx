@@ -147,14 +147,14 @@ build-reproducible-arm64: go.sum $(BUILDDIR)/
 	$(DOCKER) rm -f fanxbinary
 	
 
-# Make sure that Go version is 1.19+
+# Make sure that Go version is 1.18+
 #
 # From Osmosis discord:
 # https://discord.com/channels/798583171548840026/837144686387920936/1049449765240315925
 #
 # > Valardragon - 12/05/2022 10:18 PM
 # > It was just pointed out from `@jhernandez | stargaze.zone`, that the choice
-#   of golang version between go 1.18 and go 1.19 is consensus critical.
+#   of golang version between go 1.18 and go 1.18 is consensus critical.
 #   With insufficient info, this preliminarily seems due to go 1.19 changing the
 #   memory model format, and something state-affecting in cosmwasm getting altered.
 #   https://github.com/persistenceOne/incident-reports/blob/main/06-nov-2022_V4_upgrade_halt.md
@@ -253,3 +253,52 @@ lint:
 	@echo "🤖 Running linter..."
 	go run $(golangci_lint_cmd) run --timeout=10m
 	@echo "✅ Completed linting!"
+
+
+
+###############################################################################
+###                                Localnet                                 ###
+###############################################################################
+
+build-docker-fanxnode:
+	$(MAKE) -C networks/local
+
+# Run a 4-node testnet locally
+testnet-start: build-linux localnet-stop
+	@if ! [ -f build/node0/fanx/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/fanx:Z tendermint/fanxnode testnet --v 4 -o . --starting-ip-address 192.168.10.2 --keyring-backend=test ; fi
+	docker-compose up -d
+
+# Run a 4-node testnet locally
+localnet-start: build localnet-stop
+	@if ! [ -f build/node0/fanx/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/fanx:Z tendermint/fanxnode testnet --v 4 -o . --starting-ip-address 192.168.10.20 --keyring-backend=test ; fi
+	docker-compose up -d
+
+
+
+# Stop testnet
+testnet-stop:
+	docker-compose down
+
+# Stop testnet
+localnet-stop:
+	docker-compose down
+
+
+test-docker:
+	@docker build -f contrib/Dockerfile.test -t ${TEST_DOCKER_REPO}:$(shell git rev-parse --short HEAD) .
+	@docker tag ${TEST_DOCKER_REPO}:$(shell git rev-parse --short HEAD) ${TEST_DOCKER_REPO}:$(shell git rev-parse --abbrev-ref HEAD | sed 's#/#_#g')
+	@docker tag ${TEST_DOCKER_REPO}:$(shell git rev-parse --short HEAD) ${TEST_DOCKER_REPO}:latest
+
+test-docker-push: test-docker
+	@docker push ${TEST_DOCKER_REPO}:$(shell git rev-parse --short HEAD)
+	@docker push ${TEST_DOCKER_REPO}:$(shell git rev-parse --abbrev-ref HEAD | sed 's#/#_#g')
+	@docker push ${TEST_DOCKER_REPO}:latest
+
+.PHONY: all build-linux install format lint \
+	go-mod-cache draw-deps clean build \
+	setup-transactions setup-contract-tests-data start-fanx run-lcd-contract-tests contract-tests \
+	test test-all test-build test-cover test-unit test-race \
+	benchmark \
+	build-docker-fanxnode localnet-start localnet-stop \
+	docker-single-node
+

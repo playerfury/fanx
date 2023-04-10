@@ -1,53 +1,83 @@
-version: 1
 accounts:
-  - name: treasury
-    coins: ["9000000000000ufanx"]
-  - name: seed
-    coins: ["1000000000000ufanx"]
-validators:
-  - name: treasury
-    bonded: "1000000000000ufanx"
+  - name: alice
+    mnemonic: "slide moment original seven milk crawl help text kick fluid boring awkward doll wonder sure fragile plate grid hard next casual expire okay body"
+    coins: ["200000000uspn"]
+  - name: bob
+    mnemonic: "trap possible liquid elite embody host segment fantasy swim cable digital eager tiny broom burden diary earn hen grow engine pigeon fringe claim program"
+    coins: ["200000000uspn"]
+  - name: carol
+    mnemonic: "great immense still pill defense fetch pencil slow purchase symptom speed arm shoot fence have divorce cigar rapid hen vehicle pear evolve correct nerve"
+    coins: ["200000000uspn"]
+  - name: dave
+    mnemonic: "resist portion leisure lawn shell lunch inhale start pupil add fault segment hour dwarf toddler insect frame math remove twist easy paddle nice rhythm"
+    coins: ["200000000uspn"]
+  - name: joe
+    mnemonic: "diary behind allow lawn loop assault armor survey media toe rural mass skull way crater tobacco pair glare window soon lift pistol fitness annual"
+    coins: ["200000000uspn"]
+  - name: steve
+    mnemonic: "initial aisle blush gift shuffle hat solar dove dwarf soup credit acid update seed mercy thumb swear main verb image dove rose chat inmate"
+    coins: ["200000000uspn"]
+  - name: olivia
+    mnemonic: "dinosaur submit around jacket movie garden crash weather matter option time cabbage butter mind skin nature ride mosquito seat lock elephant merit empower come"
+    coins: ["200000000uspn"]
+validator:
+  name: alice
+  staked: "100000000uspn"
+faucet:
+  name: bob
+  coins: ["100000uspn"]
 genesis:
+  chain_id: spn-1
   app_state:
-    bank:
-      balances:
-        - address: "did:fury:1kypq29kggkextekt869pwpfukj6lsw38c8a43w"
-          coins: [{"denom": "ufanx", "amount": "500000000000"}]
-      supply:
-        - denom: "ufanx"
-          amount: "500000000000"
     staking:
       params:
-        bond_denom: "ufanx"
+        bond_denom: "uspn"
     crisis:
       constant_fee:
-        denom: "ufanx"
-        amount: "1000"
-    dvm:
-      key_vault:
-        public_keys: []
+        denom: "uspn"
     gov:
       deposit_params:
-        min_deposit: [{ amount: "1", denom: "ufanx" }]
-
-      voting_params:
-        voting_period: "30s"
+        min_deposit:
+          - "amount": "10000000"
+            "denom": "uspn"
     mint:
-      minter:
-        phase_provisions: "100000000000000.000000000000000000"
-        inflation: "0.1"
-        phase_step: "1"
-        truncated_tokens: "0"
       params:
-        mint_denom: "ufanx"
-        blocks_per_year: "100"
-        phases:
-          [
-            { inflation: "0.100000000000000000", year_coefficient: "1" },
-          ]
-        exclude_amount: "500000000000"
-    market:
+        mint_denom: "uspn"
+    launch:
       params:
-        min_bet_amount: "1000000"
-        min_bet_fee: "0"
-        max_sr_contribution: "100000000"
+        revertDelay: "5"
+        launchTimeRange:
+          minLaunchTime: "5"
+    fundraising:
+      params:
+        auction_creation_fee:
+          - "amount": "100"
+            "denom": "uspn"
+    participation:
+      params:
+        allocationPrice:
+          bonded: "1000"
+        participationTierList:
+          - tierID: "1"
+            requiredAllocations: "1"
+            benefits:
+              maxBidAmount: "1000"
+          - tierID: "2"
+            requiredAllocations: "2"
+            benefits:
+              maxBidAmount: "2000"
+          - tierID: "3"
+            requiredAllocations: "5"
+            benefits:
+              maxBidAmount: "10000"
+          - tierID: "4"
+            requiredAllocations: "10"
+            benefits:
+              maxBidAmount: "30000"
+        # 1/3 of the default unbonding period (21 days): one week
+        registrationPeriod: "604800s"
+        # 2/3 of the default unbonding period (21 days): two weeks
+        withdrawalDelay: "1209600s"
+client:
+  typescript:
+    path: "ignite-ui/src/generated"
