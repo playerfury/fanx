@@ -21,7 +21,6 @@ mkdir -p $tmp_dir
 # strings: https://unix.stackexchange.com/a/323535
 deps="github.com/cosmos/cosmos-sdk"
 deps="$deps github.com/cosmos/ibc-go/v6"
-deps="$deps github.com/CosmWasm/wasmd"
 
 # Download dependencies in go.mod
 # Necessary for the `go list` commands in the next step to work

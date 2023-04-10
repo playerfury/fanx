@@ -110,7 +110,7 @@ build: enforce-go-version
 #
 # Copied from Osmosis:
 # https://github.com/osmosis-labs/osmosis/blob/v14.0.1/Makefile#L111
-build-reproducible: build-reproducible-amd64 build-reproducible-arm64
+build-reproducible: build-reproducible-amd64 build-reproducible-arm64 build-reproducible-arm64-v8
 
 build-reproducible-amd64: go.sum $(BUILDDIR)/
 	$(DOCKER) buildx create --name fanxbuilder || true
@@ -144,6 +144,23 @@ build-reproducible-arm64: go.sum $(BUILDDIR)/
 	$(DOCKER) rm -f fanxbinary || true
 	$(DOCKER) create -ti --name fanxbinary fanx:local-arm64
 	$(DOCKER) cp fanxbinary:/bin/fanx $(BUILDDIR)/fanx-linux-arm64
+	$(DOCKER) rm -f fanxbinary
+	
+build-reproducible-arm64-v8: go.sum $(BUILDDIR)/
+	$(DOCKER) buildx create --name fanxbuilder || true
+	$(DOCKER) buildx use fanxbuilder
+	$(DOCKER) buildx build \
+		--build-arg GO_VERSION=$(GO_VERSION) \
+		--build-arg GIT_VERSION=$(VERSION) \
+		--build-arg GIT_COMMIT=$(COMMIT) \
+		--build-arg RUNNER_IMAGE=alpine:3.17 \
+		--platform linux/arm64-v8 \
+		-t fanx:local-arm64-v8 \
+		--load \
+		-f Dockerfile .
+	$(DOCKER) rm -f fanxbinary || true
+	$(DOCKER) create -ti --name fanxbinary fanx:local-arm64-v8
+	$(DOCKER) cp fanxbinary:/bin/fanx $(BUILDDIR)/fanx-linux-arm64-v8
 	$(DOCKER) rm -f fanxbinary
 
 # Make sure that Go version is 1.19+
