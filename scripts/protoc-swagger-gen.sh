@@ -20,7 +20,6 @@ mkdir -p $tmp_dir
 # sh doesn't support arrays like bash does, but it does support comma-separated
 # strings: https://unix.stackexchange.com/a/323535
 deps="github.com/cosmos/cosmos-sdk"
-deps="$deps github.com/cosmos/ibc-go/v6"
 
 # Download dependencies in go.mod
 # Necessary for the `go list` commands in the next step to work
