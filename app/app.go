@@ -43,21 +43,6 @@ import (
 	"github.com/playerfury/fanx/x/mint"
 	minttypes "github.com/playerfury/fanx/x/mint/types"
 
-	betmodule "github.com/playerfury/fanx/x/bet"
-	betmoduletypes "github.com/playerfury/fanx/x/bet/types"
-
-	marketmodule "github.com/playerfury/fanx/x/market"
-	marketmoduletypes "github.com/playerfury/fanx/x/market/types"
-
-	strategicreservemodule "github.com/playerfury/fanx/x/strategicreserve"
-	strategicreservemoduletypes "github.com/playerfury/fanx/x/strategicreserve/types"
-
-	dvmmodule "github.com/playerfury/fanx/x/dvm"
-	dvmmoduletypes "github.com/playerfury/fanx/x/dvm/types"
-
-	housemodule "github.com/playerfury/fanx/x/house"
-	housemoduletypes "github.com/playerfury/fanx/x/house/types"
-
 	// unnamed import of statik for swagger UI support
 	_ "github.com/cosmos/cosmos-sdk/client/docs/statik"
 )
