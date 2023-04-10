@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/rotofury/xfury/x/house/types"
+	"github.com/playerfury/furyx/x/house/types"
 )
 
 type msgServer struct {

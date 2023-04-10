@@ -1,7 +1,7 @@
 syntax = "proto3";
 package furyx.furyx.dvm;
 
-option go_package = "github.com/rotofury/xfury/x/dvm/types";
+option go_package = "github.com/playerfury/furyx/x/dvm/types";
 
 // Vote is the type for the proposal vote.
 message Vote {

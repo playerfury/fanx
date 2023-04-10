@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/rotofury/xfury/x/mint/types"
+	"github.com/playerfury/furyx/x/mint/types"
 	"github.com/spf13/cobra"
 )
 

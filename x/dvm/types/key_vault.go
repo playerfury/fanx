@@ -3,7 +3,7 @@ package types
 import (
 	fmt "fmt"
 
-	"github.com/rotofury/xfury/utils"
+	"github.com/playerfury/furyx/utils"
 )
 
 // GetLeader sets the current leader of public keys.

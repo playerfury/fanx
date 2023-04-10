@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/rotofury/xfury/x/market/types"
+	"github.com/playerfury/furyx/x/market/types"
 	"github.com/stretchr/testify/require"
 )
 

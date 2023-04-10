@@ -4,8 +4,8 @@ import (
 	"context"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/rotofury/xfury/consts"
-	"github.com/rotofury/xfury/x/mint/types"
+	"github.com/playerfury/furyx/consts"
+	"github.com/playerfury/furyx/x/mint/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

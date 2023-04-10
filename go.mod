@@ -1,4 +1,4 @@
-module github.com/rotofury/xfury
+module github.com/playerfury/furyx
 
 go 1.18
 

@@ -7,7 +7,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 	// "github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/rotofury/xfury/x/bet/types"
+	"github.com/playerfury/furyx/x/bet/types"
 )
 
 const (

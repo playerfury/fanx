@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	simappUtil "github.com/rotofury/xfury/testutil/simapp"
-	"github.com/rotofury/xfury/x/mint/keeper"
+	simappUtil "github.com/playerfury/furyx/testutil/simapp"
+	"github.com/playerfury/furyx/x/mint/keeper"
 	"github.com/stretchr/testify/require"
 )
 

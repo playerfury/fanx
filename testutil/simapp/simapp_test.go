@@ -3,7 +3,7 @@ package simapp_test
 import (
 	"testing"
 
-	simappUtil "github.com/rotofury/xfury/testutil/simapp"
+	simappUtil "github.com/playerfury/furyx/testutil/simapp"
 	"github.com/stretchr/testify/require"
 )
 

@@ -1,6 +1,6 @@
-# SGE Network
+# FURY Network
 
-The Sports, Gaming & Entertainment Network (SGE Network), is a blockchain
+The Sports, Gaming & Entertainment Network (FURY Network), is a blockchain
 designed to support the future of sports betting & related gaming by
 leveraging the modular Cosmos design. We believe the future will be heavily shaped by many of the values driving the recent wave of crypto and blockchain development: transparency, increased decentralization, and utility that benefits all stakeholders, especially the user-base.
 
@@ -11,7 +11,7 @@ Utilizing a sovereign blockchain uniquely enables:
 - An unparalleled level of transparency.
 - An efficiency of settlement and immediate payout to participants.
 
-At launch, the SGE Network will be optimized to deploy an inaugural application: Six Sigma Sports, which is re-imagining the sports betting landscape and bringing a unique user experience with the benefit of blockchain technology.[Please visit to learn more about Six Sigma Sports.](https://sixsigmasports.io/)
+At launch, the FURY Network will be optimized to deploy an inaugural application: Six Sigma Sports, which is re-imagining the sports betting landscape and bringing a unique user experience with the benefit of blockchain technology.[Please visit to learn more about Six Sigma Sports.](https://sixsigmasports.io/)
 
 ---
 
@@ -36,7 +36,7 @@ At launch, the SGE Network will be optimized to deploy an inaugural application:
 >
 >Prerequisite: go1.18+ required. [ref](https://golang.org/doc/install)
 
-Sge could be installed by two ways - downloading binary from releases page or build from source.
+Fury could be installed by two ways - downloading binary from releases page or build from source.
 
 ### Download from releases page
 
@@ -57,7 +57,7 @@ sudo mv furyx /usr/local/sbin/furyx
 - Clone git repository
 
 ```shell
-git clone https://github.com/rotofury/xfury.git
+git clone https://github.com/playerfury/furyx.git
 ```
 
 - Checkout release tag
@@ -85,7 +85,7 @@ Please following contents(working dir may be changed as needed)
 
 ```systemd
 [Unit]
-Description=Sge Network node
+Description=Fury Network node
 After=network.target
 
 [Service]

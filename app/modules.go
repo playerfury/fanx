@@ -39,24 +39,24 @@ import (
 	ibctransfertypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
 	ibc "github.com/cosmos/ibc-go/v3/modules/core"
 	ibchost "github.com/cosmos/ibc-go/v3/modules/core/24-host"
-	furyxappparams "github.com/rotofury/xfury/app/params"
-	"github.com/rotofury/xfury/x/mint"
-	minttypes "github.com/rotofury/xfury/x/mint/types"
+	furyxappparams "github.com/playerfury/furyx/app/params"
+	"github.com/playerfury/furyx/x/mint"
+	minttypes "github.com/playerfury/furyx/x/mint/types"
 
-	betmodule "github.com/rotofury/xfury/x/bet"
-	betmoduletypes "github.com/rotofury/xfury/x/bet/types"
+	betmodule "github.com/playerfury/furyx/x/bet"
+	betmoduletypes "github.com/playerfury/furyx/x/bet/types"
 
-	marketmodule "github.com/rotofury/xfury/x/market"
-	marketmoduletypes "github.com/rotofury/xfury/x/market/types"
+	marketmodule "github.com/playerfury/furyx/x/market"
+	marketmoduletypes "github.com/playerfury/furyx/x/market/types"
 
-	strategicreservemodule "github.com/rotofury/xfury/x/strategicreserve"
-	strategicreservemoduletypes "github.com/rotofury/xfury/x/strategicreserve/types"
+	strategicreservemodule "github.com/playerfury/furyx/x/strategicreserve"
+	strategicreservemoduletypes "github.com/playerfury/furyx/x/strategicreserve/types"
 
-	dvmmodule "github.com/rotofury/xfury/x/dvm"
-	dvmmoduletypes "github.com/rotofury/xfury/x/dvm/types"
+	dvmmodule "github.com/playerfury/furyx/x/dvm"
+	dvmmoduletypes "github.com/playerfury/furyx/x/dvm/types"
 
-	housemodule "github.com/rotofury/xfury/x/house"
-	housemoduletypes "github.com/rotofury/xfury/x/house/types"
+	housemodule "github.com/playerfury/furyx/x/house"
+	housemoduletypes "github.com/playerfury/furyx/x/house/types"
 
 	// unnamed import of statik for swagger UI support
 	_ "github.com/cosmos/cosmos-sdk/client/docs/statik"
@@ -111,7 +111,7 @@ var ModuleBasics = module.NewBasicManager(
 )
 
 func appModules(
-	app *SgeApp,
+	app *FuryApp,
 	encodingConfig furyxappparams.EncodingConfig,
 	skipGenesisInvariants bool,
 ) []module.AppModule {
@@ -155,7 +155,7 @@ func appModules(
 // simulationModules returns modules for simulation manager
 // define the order of the modules for deterministic simulations
 func simulationModules(
-	app *SgeApp,
+	app *FuryApp,
 	encodingConfig furyxappparams.EncodingConfig,
 	_ bool,
 ) []module.AppModuleSimulation {

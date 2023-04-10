@@ -4,7 +4,7 @@ package furyx.furyx.mint;
 import "gogoproto/gogo.proto";
 import "furyx/mint/phase.proto";
 
-option go_package = "github.com/rotofury/xfury/x/mint/types";
+option go_package = "github.com/playerfury/furyx/x/mint/types";
 
 // Params define the parameters for the module.
 message Params {

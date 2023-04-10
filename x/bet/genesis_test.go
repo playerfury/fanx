@@ -3,10 +3,10 @@ package bet_test
 import (
 	"testing"
 
-	"github.com/rotofury/xfury/testutil/nullify"
-	simappUtil "github.com/rotofury/xfury/testutil/simapp"
-	"github.com/rotofury/xfury/x/bet"
-	"github.com/rotofury/xfury/x/bet/types"
+	"github.com/playerfury/furyx/testutil/nullify"
+	simappUtil "github.com/playerfury/furyx/testutil/simapp"
+	"github.com/playerfury/furyx/x/bet"
+	"github.com/playerfury/furyx/x/bet/types"
 	"github.com/stretchr/testify/require"
 )
 

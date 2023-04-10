@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/rotofury/xfury/x/strategicreserve/types"
+	"github.com/playerfury/furyx/x/strategicreserve/types"
 )
 
 // SetParticipationExposure sets a participation exposure.

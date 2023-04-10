@@ -4,7 +4,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/tx"
-	"github.com/rotofury/xfury/x/dvm/types"
+	"github.com/playerfury/furyx/x/dvm/types"
 	"github.com/spf13/cobra"
 )
 

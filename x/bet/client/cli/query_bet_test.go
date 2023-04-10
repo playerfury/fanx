@@ -16,12 +16,12 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/rotofury/xfury/testutil/network"
-	"github.com/rotofury/xfury/testutil/nullify"
-	simappUtil "github.com/rotofury/xfury/testutil/simapp"
-	"github.com/rotofury/xfury/x/bet/client/cli"
-	"github.com/rotofury/xfury/x/bet/types"
-	markettypes "github.com/rotofury/xfury/x/market/types"
+	"github.com/playerfury/furyx/testutil/network"
+	"github.com/playerfury/furyx/testutil/nullify"
+	simappUtil "github.com/playerfury/furyx/testutil/simapp"
+	"github.com/playerfury/furyx/x/bet/client/cli"
+	"github.com/playerfury/furyx/x/bet/types"
+	markettypes "github.com/playerfury/furyx/x/market/types"
 )
 
 const testMarketUID = "5db09053-2901-4110-8fb5-c14e21f8d555"

@@ -5,7 +5,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 
-	"github.com/rotofury/xfury/x/house/types"
+	"github.com/playerfury/furyx/x/house/types"
 )
 
 // Keeper of the house store

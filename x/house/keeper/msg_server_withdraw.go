@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/rotofury/xfury/x/house/types"
+	"github.com/playerfury/furyx/x/house/types"
 )
 
 // Withdraw performs withdrawal of unused tokens corresponding to a deposit.

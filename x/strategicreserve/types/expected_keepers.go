@@ -2,8 +2,8 @@ package types
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	bettypes "github.com/rotofury/xfury/x/bet/types"
-	markettypes "github.com/rotofury/xfury/x/market/types"
+	bettypes "github.com/playerfury/furyx/x/bet/types"
+	markettypes "github.com/playerfury/furyx/x/market/types"
 )
 
 // AccountKeeper defines the expected account keeper methods.

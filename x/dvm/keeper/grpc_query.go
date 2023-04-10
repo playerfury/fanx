@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/rotofury/xfury/x/dvm/types"
+	"github.com/playerfury/furyx/x/dvm/types"
 )
 
 var _ types.QueryServer = Keeper{}

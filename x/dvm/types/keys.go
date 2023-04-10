@@ -1,6 +1,6 @@
 package types
 
-import "github.com/rotofury/xfury/utils"
+import "github.com/playerfury/furyx/utils"
 
 // module constants
 const (

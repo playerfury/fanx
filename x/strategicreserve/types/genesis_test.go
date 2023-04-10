@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/google/uuid"
-	"github.com/rotofury/xfury/x/strategicreserve/types"
+	"github.com/playerfury/furyx/x/strategicreserve/types"
 	"github.com/stretchr/testify/require"
 )
 

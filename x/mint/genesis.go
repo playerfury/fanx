@@ -2,8 +2,8 @@ package mint
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/rotofury/xfury/x/mint/keeper"
-	"github.com/rotofury/xfury/x/mint/types"
+	"github.com/playerfury/furyx/x/mint/keeper"
+	"github.com/playerfury/furyx/x/mint/types"
 )
 
 // InitGenesis initializes the module's state from a provided genesis

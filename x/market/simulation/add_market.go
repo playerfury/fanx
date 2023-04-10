@@ -7,8 +7,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/rotofury/xfury/x/market/keeper"
-	"github.com/rotofury/xfury/x/market/types"
+	"github.com/playerfury/furyx/x/market/keeper"
+	"github.com/playerfury/furyx/x/market/types"
 )
 
 // SimulateMsgAddMarket simulates the add market flow

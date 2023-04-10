@@ -6,7 +6,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/rotofury/xfury/x/dvm/types"
+	"github.com/playerfury/furyx/x/dvm/types"
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
 )

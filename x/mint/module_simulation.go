@@ -10,9 +10,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/rotofury/xfury/testutil/sample"
-	mintsimulation "github.com/rotofury/xfury/x/mint/simulation"
-	"github.com/rotofury/xfury/x/mint/types"
+	"github.com/playerfury/furyx/testutil/sample"
+	mintsimulation "github.com/playerfury/furyx/x/mint/simulation"
+	"github.com/playerfury/furyx/x/mint/types"
 )
 
 // avoid unused import issue

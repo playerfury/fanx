@@ -7,7 +7,7 @@ import "furyx/dvm/key_vault.proto";
 import "furyx/dvm/proposal.proto";
 import "furyx/dvm/stats.proto";
 
-option go_package = "github.com/rotofury/xfury/x/dvm/types";
+option go_package = "github.com/playerfury/furyx/x/dvm/types";
 
 // GenesisState defines the dvm module's genesis state.
 message GenesisState {

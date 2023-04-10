@@ -6,8 +6,8 @@ const (
 	HumanCoinUnit = "furyx"
 	// BaseCoinUnit is the actual name of coin used in transaction
 	BaseCoinUnit = "ufuryx"
-	// SGEExponent is the exponential digits of the coin
-	SGEExponent = 6
+	// FURYExponent is the exponential digits of the coin
+	FURYExponent = 6
 	// DefaultBondDenom is the default staking denom of application
 	DefaultBondDenom = BaseCoinUnit
 )

@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/cosmos/cosmos-sdk/std"
-	"github.com/rotofury/xfury/app/params"
+	"github.com/playerfury/furyx/app/params"
 )
 
 // MakeEncodingConfig creates an EncodingConfig for testing

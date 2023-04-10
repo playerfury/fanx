@@ -2,7 +2,7 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/rotofury/xfury/x/market/types"
+	"github.com/playerfury/furyx/x/market/types"
 )
 
 // KeeperTest is a wrapper object for the keeper, It is being used

@@ -4,8 +4,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	bettypes "github.com/rotofury/xfury/x/bet/types"
-	"github.com/rotofury/xfury/x/strategicreserve/types"
+	bettypes "github.com/playerfury/furyx/x/bet/types"
+	"github.com/playerfury/furyx/x/strategicreserve/types"
 )
 
 // RefundBettor process bets in case market gets cancelled or aborted,

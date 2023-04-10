@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/query"
-	"github.com/rotofury/xfury/consts"
-	"github.com/rotofury/xfury/x/market/types"
+	"github.com/playerfury/furyx/consts"
+	"github.com/playerfury/furyx/x/market/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

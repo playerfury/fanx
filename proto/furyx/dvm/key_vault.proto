@@ -3,7 +3,7 @@ package furyx.furyx.dvm;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/rotofury/xfury/x/dvm/types";
+option go_package = "github.com/playerfury/furyx/x/dvm/types";
 
 // KeyVault is the information of important keys stored in dvm state.
 message KeyVault {

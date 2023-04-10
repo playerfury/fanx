@@ -9,8 +9,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 
-	"github.com/rotofury/xfury/testutil/network"
-	"github.com/rotofury/xfury/x/bet/client/cli"
+	"github.com/playerfury/furyx/testutil/network"
+	"github.com/playerfury/furyx/x/bet/client/cli"
 )
 
 func TestTXBetCLI(t *testing.T) {

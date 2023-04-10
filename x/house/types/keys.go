@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/rotofury/xfury/utils"
+	"github.com/playerfury/furyx/utils"
 )
 
 const (

@@ -10,7 +10,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/simulation"
 
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/rotofury/xfury/x/mint/types"
+	"github.com/playerfury/furyx/x/mint/types"
 )
 
 const (

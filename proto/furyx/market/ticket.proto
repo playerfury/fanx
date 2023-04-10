@@ -6,7 +6,7 @@ import "furyx/market/market.proto";
 import "furyx/market/odds.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/rotofury/xfury/x/market/types";
+option go_package = "github.com/playerfury/furyx/x/market/types";
 
 // MarketAddTicketPayload indicates data of add market ticket
 message MarketAddTicketPayload {

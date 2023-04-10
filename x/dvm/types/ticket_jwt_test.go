@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/rotofury/xfury/utils"
-	"github.com/rotofury/xfury/x/dvm/types"
+	"github.com/playerfury/furyx/utils"
+	"github.com/playerfury/furyx/x/dvm/types"
 	"github.com/stretchr/testify/require"
 )
 

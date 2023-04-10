@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/rotofury/xfury/utils"
+	"github.com/playerfury/furyx/utils"
 	"github.com/spf13/cast"
 )
 

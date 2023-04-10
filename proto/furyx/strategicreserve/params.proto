@@ -3,7 +3,7 @@ package furyx.furyx.strategicreserve;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/rotofury/xfury/x/strategicreserve/types";
+option go_package = "github.com/playerfury/furyx/x/strategicreserve/types";
 
 // Params defines the parameters for the strategic reserve module.
 message Params {

@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	simappUtil "github.com/rotofury/xfury/testutil/simapp"
-	"github.com/rotofury/xfury/x/dvm/keeper"
-	"github.com/rotofury/xfury/x/dvm/types"
+	simappUtil "github.com/playerfury/furyx/testutil/simapp"
+	"github.com/playerfury/furyx/x/dvm/keeper"
+	"github.com/playerfury/furyx/x/dvm/types"
 	"github.com/stretchr/testify/require"
 )
 

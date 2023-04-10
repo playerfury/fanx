@@ -2,8 +2,8 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/rotofury/xfury/utils"
-	"github.com/rotofury/xfury/x/dvm/types"
+	"github.com/playerfury/furyx/utils"
+	"github.com/playerfury/furyx/x/dvm/types"
 )
 
 // SetProposalStats sets proposal statistics in the store

@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/rotofury/xfury/consts"
-	"github.com/rotofury/xfury/testutil/nullify"
-	"github.com/rotofury/xfury/x/market/types"
+	"github.com/playerfury/furyx/consts"
+	"github.com/playerfury/furyx/testutil/nullify"
+	"github.com/playerfury/furyx/x/market/types"
 	"github.com/spf13/cast"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"

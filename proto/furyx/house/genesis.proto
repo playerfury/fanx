@@ -6,7 +6,7 @@ import "furyx/house/deposit.proto";
 import "furyx/house/withdraw.proto";
 import "furyx/house/params.proto";
 
-option go_package = "github.com/rotofury/xfury/x/house/types";
+option go_package = "github.com/playerfury/furyx/x/house/types";
 
 // GenesisState defines the house module's genesis state.
 message GenesisState {

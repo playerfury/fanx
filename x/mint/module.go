@@ -16,9 +16,9 @@ import (
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/rotofury/xfury/x/mint/client/cli"
-	"github.com/rotofury/xfury/x/mint/keeper"
-	"github.com/rotofury/xfury/x/mint/types"
+	"github.com/playerfury/furyx/x/mint/client/cli"
+	"github.com/playerfury/furyx/x/mint/keeper"
+	"github.com/playerfury/furyx/x/mint/types"
 )
 
 var (

@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/rotofury/xfury/utils"
+	"github.com/playerfury/furyx/utils"
 )
 
 // SetPayoutLock sets a lock for the payout element

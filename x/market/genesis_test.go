@@ -3,10 +3,10 @@ package market_test
 import (
 	"testing"
 
-	"github.com/rotofury/xfury/testutil/nullify"
-	simappUtil "github.com/rotofury/xfury/testutil/simapp"
-	market "github.com/rotofury/xfury/x/market"
-	"github.com/rotofury/xfury/x/market/types"
+	"github.com/playerfury/furyx/testutil/nullify"
+	simappUtil "github.com/playerfury/furyx/testutil/simapp"
+	market "github.com/playerfury/furyx/x/market"
+	"github.com/playerfury/furyx/x/market/types"
 	"github.com/stretchr/testify/require"
 )
 
