@@ -1,0 +1,423 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "fanx/dvm/query.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/fanx/dvm/params": {
+      "get": {
+        "summary": "Params queries the parameters of the module.",
+        "operationId": "Params",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.dvm.QueryParamsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/dvm/pub_keys": {
+      "get": {
+        "summary": "Queries a list of PubKeys items.",
+        "operationId": "PubKeys",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.dvm.QueryPubKeysResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/dvm/pubkeys_proposal/{status}/{id}": {
+      "get": {
+        "summary": "Queries an proposal by id and status.",
+        "operationId": "PublicKeysChangeProposal",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.dvm.QueryPublicKeysChangeProposalResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "PROPOSAL_STATUS_UNSPECIFIED",
+              "PROPOSAL_STATUS_ACTIVE",
+              "PROPOSAL_STATUS_FINISHED"
+            ]
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uint64"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/dvm/pubkeys_proposals/{status}": {
+      "get": {
+        "summary": "Queries a list of proposal items by status.",
+        "operationId": "PublicKeysChangeProposals",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.dvm.QueryPublicKeysChangeProposalsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "PROPOSAL_STATUS_UNSPECIFIED",
+              "PROPOSAL_STATUS_ACTIVE",
+              "PROPOSAL_STATUS_FINISHED"
+            ]
+          },
+          {
+            "name": "pagination.key",
+            "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "pagination.offset",
+            "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.limit",
+            "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.count_total",
+            "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.reverse",
+            "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "cosmos.base.query.v1beta1.PageRequest": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "format": "byte",
+          "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set."
+        },
+        "offset": {
+          "type": "string",
+          "format": "uint64",
+          "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set."
+        },
+        "limit": {
+          "type": "string",
+          "format": "uint64",
+          "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app."
+        },
+        "count_total": {
+          "type": "boolean",
+          "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set."
+        },
+        "reverse": {
+          "type": "boolean",
+          "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43"
+        }
+      },
+      "description": "message SomeRequest {\n         Foo some_parameter = 1;\n         PageRequest pagination = 2;\n }",
+      "title": "PageRequest is to be embedded in gRPC request messages for efficient\npagination. Ex:"
+    },
+    "cosmos.base.query.v1beta1.PageResponse": {
+      "type": "object",
+      "properties": {
+        "next_key": {
+          "type": "string",
+          "format": "byte",
+          "description": "next_key is the key to be passed to PageRequest.key to\nquery the next page most efficiently. It will be empty if\nthere are no more results."
+        },
+        "total": {
+          "type": "string",
+          "format": "uint64",
+          "title": "total is total number of results available if PageRequest.count_total\nwas set, its value is undefined otherwise"
+        }
+      },
+      "description": "PageResponse is to be embedded in gRPC response messages where the\ncorresponding request message has used PageRequest.\n\n message SomeResponse {\n         repeated Bar results = 1;\n         PageResponse page = 2;\n }"
+    },
+    "fanx.dvm.Params": {
+      "type": "object",
+      "description": "Params defines the parameters for the module."
+    },
+    "fanx.dvm.ProposalResult": {
+      "type": "string",
+      "enum": [
+        "PROPOSAL_RESULT_UNSPECIFIED",
+        "PROPOSAL_RESULT_APPROVED",
+        "PROPOSAL_RESULT_REJECTED",
+        "PROPOSAL_RESULT_EXPIRED"
+      ],
+      "default": "PROPOSAL_RESULT_UNSPECIFIED",
+      "description": "ProposalResult is the enum type for the proposal result.\n\n - PROPOSAL_RESULT_UNSPECIFIED: unchosen value\n - PROPOSAL_RESULT_APPROVED: approved\n - PROPOSAL_RESULT_REJECTED: rejected\n - PROPOSAL_RESULT_EXPIRED: expired"
+    },
+    "fanx.dvm.ProposalStatus": {
+      "type": "string",
+      "enum": [
+        "PROPOSAL_STATUS_UNSPECIFIED",
+        "PROPOSAL_STATUS_ACTIVE",
+        "PROPOSAL_STATUS_FINISHED"
+      ],
+      "default": "PROPOSAL_STATUS_UNSPECIFIED",
+      "description": "ProposalStatus is the enum type for the proposal status.\n\n - PROPOSAL_STATUS_UNSPECIFIED: unchosen value\n - PROPOSAL_STATUS_ACTIVE: active\n - PROPOSAL_STATUS_FINISHED: finished"
+    },
+    "fanx.dvm.ProposalVote": {
+      "type": "string",
+      "enum": [
+        "PROPOSAL_VOTE_UNSPECIFIED",
+        "PROPOSAL_VOTE_NO",
+        "PROPOSAL_VOTE_YES"
+      ],
+      "default": "PROPOSAL_VOTE_UNSPECIFIED",
+      "description": "ProposalVote is the enum type for the proposal vote.\n\n - PROPOSAL_VOTE_UNSPECIFIED: unchosen value\n - PROPOSAL_VOTE_NO: no\n - PROPOSAL_VOTE_YES: yes"
+    },
+    "fanx.dvm.PubkeysChangeProposalPayload": {
+      "type": "object",
+      "properties": {
+        "public_keys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "public_keys contain new pub keys to be added to public keys."
+        },
+        "leader_index": {
+          "type": "integer",
+          "format": "int64",
+          "description": "leader_index is the universal unique identifier of the public key."
+        }
+      },
+      "description": "PubkeysChangeProposalPayload indicates data of public keys changes proposal\nticket."
+    },
+    "fanx.dvm.PublicKeysChangeProposal": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uint64",
+          "description": "id is the sequential id of the proposal generated by the blockchain."
+        },
+        "creator": {
+          "type": "string",
+          "description": "creator is the account address of the proposal creator."
+        },
+        "modifications": {
+          "$ref": "#/definitions/fanx.dvm.PubkeysChangeProposalPayload",
+          "description": "modifications contain the ticket payload of the proposal."
+        },
+        "votes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.dvm.Vote"
+          },
+          "description": "votes contains the votes of the proposal."
+        },
+        "start_ts": {
+          "type": "string",
+          "format": "int64",
+          "description": "start_ts is the block time that the proposal is set."
+        },
+        "result": {
+          "$ref": "#/definitions/fanx.dvm.ProposalResult",
+          "description": "result is the result of the finished proposal."
+        },
+        "result_meta": {
+          "type": "string",
+          "description": "result_meta is the metadata related to the result of the finished proposal."
+        },
+        "finish_ts": {
+          "type": "string",
+          "format": "int64",
+          "description": "finish_ts is the block time that the proposal is set as finished."
+        },
+        "status": {
+          "$ref": "#/definitions/fanx.dvm.ProposalStatus",
+          "description": "status is the status of a proposal."
+        }
+      },
+      "description": "PublicKeysChangeProposal is the type for the proposal for additions and\nremovals of pub keys."
+    },
+    "fanx.dvm.QueryParamsResponse": {
+      "type": "object",
+      "properties": {
+        "params": {
+          "$ref": "#/definitions/fanx.dvm.Params",
+          "description": "params holds all the parameters of this module."
+        }
+      },
+      "description": "QueryParamsResponse is the response type for the Query/Params RPC method.\nQuery/Params RPC method."
+    },
+    "fanx.dvm.QueryPubKeysResponse": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "list is the list of allowed public keys."
+        }
+      },
+      "description": "QueryPubKeysResponse is the response type for the public keys list query.\nQuery/PubKeys RPC method."
+    },
+    "fanx.dvm.QueryPublicKeysChangeProposalResponse": {
+      "type": "object",
+      "properties": {
+        "proposal": {
+          "$ref": "#/definitions/fanx.dvm.PublicKeysChangeProposal",
+          "description": "proposal holds the proposal."
+        }
+      },
+      "description": "QueryPublicKeysChangeProposalResponse is the response type for the\nQuery/PublicKeysChangeProposal RPC method."
+    },
+    "fanx.dvm.QueryPublicKeysChangeProposalsResponse": {
+      "type": "object",
+      "properties": {
+        "proposals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.dvm.PublicKeysChangeProposal"
+          },
+          "description": "proposals hold the proposals."
+        },
+        "pagination": {
+          "$ref": "#/definitions/cosmos.base.query.v1beta1.PageResponse"
+        }
+      },
+      "description": "QueryPublicKeysChangeProposalsResponse is the response type for the\nQuery/PublicKeysChangeProposals RPC method."
+    },
+    "fanx.dvm.Vote": {
+      "type": "object",
+      "properties": {
+        "public_key": {
+          "type": "string",
+          "description": "public_key is the public key of the voter."
+        },
+        "vote": {
+          "$ref": "#/definitions/fanx.dvm.ProposalVote",
+          "description": "vote is the vote enum value."
+        }
+      },
+      "description": "Vote is the type for the proposal vote."
+    },
+    "google.protobuf.Any": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "grpc.gateway.runtime.Error": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/google.protobuf.Any"
+          }
+        }
+      }
+    }
+  }
+}

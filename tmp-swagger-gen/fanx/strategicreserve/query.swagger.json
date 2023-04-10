@@ -1,0 +1,1083 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "fanx/strategicreserve/query.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/fanx/orderbooks/{order_book_uid}": {
+      "get": {
+        "summary": "OrderBook queries order book info for given order book universal unique\nidentifier.",
+        "operationId": "OrderBook",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryOrderBookResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "order_book_uid",
+            "description": "order_book_uid defines the order book uid to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/orderbooks/{order_book_uid}/exposures": {
+      "get": {
+        "summary": "OrderBookExposures queries exposures info for the given order book.",
+        "operationId": "OrderBookExposures",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryOrderBookExposuresResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "order_book_uid",
+            "description": "order_book_uid defines the order book uid to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "pagination.key",
+            "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "pagination.offset",
+            "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.limit",
+            "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.count_total",
+            "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.reverse",
+            "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/orderbooks/{order_book_uid}/exposures/{odds_uid}": {
+      "get": {
+        "summary": "OrderBookExposure queries exposure info for the given order book and odds\nuniversal unique identifier.",
+        "operationId": "OrderBookExposure",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryOrderBookExposureResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "order_book_uid",
+            "description": "order_book_uid defines the order book uid to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "odds_uid",
+            "description": "odds_uid defines the odds id to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/orderbooks/{order_book_uid}/historical-participation-exposures": {
+      "get": {
+        "summary": "HistoricalParticipationExposures queries historical exposures info for\nthe given order book participation.",
+        "operationId": "HistoricalParticipationExposures",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryHistoricalParticipationExposuresResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "order_book_uid",
+            "description": "order_book_uid defines the order book uid to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "pagination.key",
+            "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "pagination.offset",
+            "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.limit",
+            "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.count_total",
+            "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.reverse",
+            "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/orderbooks/{order_book_uid}/participation-exposures": {
+      "get": {
+        "summary": "ParticipationExposures queries exposures info for given order book\nparticipations.",
+        "operationId": "ParticipationExposures",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryParticipationExposuresResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "order_book_uid",
+            "description": "order_book_uid defines the order book uid to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "pagination.key",
+            "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "pagination.offset",
+            "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.limit",
+            "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.count_total",
+            "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.reverse",
+            "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/orderbooks/{order_book_uid}/participation-exposures/{participation_index}": {
+      "get": {
+        "summary": "ParticipationExposure queries exposure info for given order book\nparticipation.",
+        "operationId": "ParticipationExposure",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryParticipationExposureResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "order_book_uid",
+            "description": "order_book_uid defines the order book id to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "participation_index",
+            "description": "participation_index is the index of participation to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.key",
+            "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "pagination.offset",
+            "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.limit",
+            "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.count_total",
+            "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.reverse",
+            "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/orderbooks/{order_book_uid}/participations": {
+      "get": {
+        "summary": "OrderBookParticipations queries participation info for given order book.",
+        "operationId": "OrderBookParticipations",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryOrderBookParticipationsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "order_book_uid",
+            "description": "order_book_uid defines the order book universal unique identifier to query\nfor.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "pagination.key",
+            "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "pagination.offset",
+            "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.limit",
+            "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.count_total",
+            "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.reverse",
+            "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/orderbooks/{order_book_uid}/participations/{participation_index}": {
+      "get": {
+        "summary": "OrderBookParticipation queries participation info for given order book and\nparticipation index.",
+        "operationId": "OrderBookParticipation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryOrderBookParticipationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "order_book_uid",
+            "description": "order_book_uid defines the order book universal unique identifier to query\nfor.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "participation_index",
+            "description": "participation_index defines the participation index to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uint64"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/orderbooks/{order_book_uid}/participations/{participation_index}/fulfilled_bets": {
+      "get": {
+        "summary": "ParticipationFulfilledBets queries fulfilled bets for given order book\nparticipation.",
+        "operationId": "ParticipationFulfilledBets",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryParticipationFulfilledBetsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "order_book_uid",
+            "description": "order_book_uid defines the order book uid to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "participation_index",
+            "description": "participation_index is the index of participation to query for.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.key",
+            "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "pagination.offset",
+            "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.limit",
+            "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.count_total",
+            "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.reverse",
+            "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/orderbooks/{status}": {
+      "get": {
+        "summary": "OrderBooks queries all order books that match the given status.",
+        "operationId": "OrderBooks",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryOrderBooksResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "status",
+            "description": "status enables query for order books matching a given status.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "pagination.key",
+            "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "pagination.offset",
+            "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.limit",
+            "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.count_total",
+            "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.reverse",
+            "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/strategicreserve/params": {
+      "get": {
+        "summary": "Params queries the parameters of the module.",
+        "operationId": "Params",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.strategicreserve.QueryParamsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "tags": [
+          "Query"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "cosmos.base.query.v1beta1.PageRequest": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "format": "byte",
+          "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set."
+        },
+        "offset": {
+          "type": "string",
+          "format": "uint64",
+          "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set."
+        },
+        "limit": {
+          "type": "string",
+          "format": "uint64",
+          "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app."
+        },
+        "count_total": {
+          "type": "boolean",
+          "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set."
+        },
+        "reverse": {
+          "type": "boolean",
+          "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43"
+        }
+      },
+      "description": "message SomeRequest {\n         Foo some_parameter = 1;\n         PageRequest pagination = 2;\n }",
+      "title": "PageRequest is to be embedded in gRPC request messages for efficient\npagination. Ex:"
+    },
+    "cosmos.base.query.v1beta1.PageResponse": {
+      "type": "object",
+      "properties": {
+        "next_key": {
+          "type": "string",
+          "format": "byte",
+          "description": "next_key is the key to be passed to PageRequest.key to\nquery the next page most efficiently. It will be empty if\nthere are no more results."
+        },
+        "total": {
+          "type": "string",
+          "format": "uint64",
+          "title": "total is total number of results available if PageRequest.count_total\nwas set, its value is undefined otherwise"
+        }
+      },
+      "description": "PageResponse is to be embedded in gRPC response messages where the\ncorresponding request message has used PageRequest.\n\n message SomeResponse {\n         repeated Bar results = 1;\n         PageResponse page = 2;\n }"
+    },
+    "fanx.strategicreserve.OrderBook": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "uid is the universal unique identifier of the order book."
+        },
+        "participation_count": {
+          "type": "string",
+          "format": "uint64",
+          "description": "participation_count is the count of participations in the order book."
+        },
+        "odds_count": {
+          "type": "string",
+          "format": "uint64",
+          "description": "odds_count is the count of the odds in the order book."
+        },
+        "status": {
+          "$ref": "#/definitions/fanx.strategicreserve.OrderBookStatus",
+          "description": "status represents the status of the order book."
+        }
+      },
+      "description": "OrderBook represents the order book maintained against a market."
+    },
+    "fanx.strategicreserve.OrderBookOddsExposure": {
+      "type": "object",
+      "properties": {
+        "order_book_uid": {
+          "type": "string",
+          "description": "order_book_uid is the universally unique identifier corresponding to the\norder book."
+        },
+        "odds_uid": {
+          "type": "string",
+          "description": "odds_uid is the universally unique identifier of the odds."
+        },
+        "fulfillment_queue": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uint64"
+          },
+          "description": "fulfillment_queue is the slice of indices of participations to be\nfulfilled."
+        }
+      },
+      "description": "OrderBookOddsExposure represents the exposures taken on odds."
+    },
+    "fanx.strategicreserve.OrderBookParticipation": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "string",
+          "format": "uint64",
+          "description": "index is the index of the participation in the participation queue."
+        },
+        "order_book_uid": {
+          "type": "string",
+          "description": "order_book_uid is the unique identifier corresponding to the order book."
+        },
+        "participant_address": {
+          "type": "string",
+          "description": "participant_address is the bech32-encoded address of the participant."
+        },
+        "is_module_account": {
+          "type": "boolean",
+          "description": "is_module_account represents if the participant is a module account or not."
+        },
+        "liquidity": {
+          "type": "string",
+          "description": "liquidity is the total initial liquidity provided."
+        },
+        "current_round_liquidity": {
+          "type": "string",
+          "description": "current_round_liquidity is the liquidity provided for the current round."
+        },
+        "exposures_not_filled": {
+          "type": "string",
+          "format": "uint64",
+          "description": "exposures_not_filled reresents if all of the exposures of the participation\nare filled or not."
+        },
+        "total_bet_amount": {
+          "type": "string",
+          "description": "total_bet_amount is the total bet amount corresponding to all exposures."
+        },
+        "current_round_total_bet_amount": {
+          "type": "string",
+          "description": "current_round_total_bet_amount is the total bet amount corresponding to all\nexposures in the current round."
+        },
+        "max_loss": {
+          "type": "string",
+          "description": "max_loss is the total bet amount corresponding to all exposure."
+        },
+        "current_round_max_loss": {
+          "type": "string",
+          "description": "current_round_max_loss is the current round max loss."
+        },
+        "current_round_max_loss_odds_uid": {
+          "type": "string",
+          "description": "current_round_max_loss_odds_uid is the total max loss corresponding to\nall exposures."
+        },
+        "actual_profit": {
+          "type": "string",
+          "description": "actual_profit is the actual profit of the participation fulfillment."
+        },
+        "is_settled": {
+          "type": "boolean",
+          "description": "is_settled represents if the participation is settled or not."
+        }
+      },
+      "description": "OrderBookParticipation represents the participants of an order book."
+    },
+    "fanx.strategicreserve.OrderBookStatus": {
+      "type": "string",
+      "enum": [
+        "ORDER_BOOK_STATUS_UNSPECIFIED",
+        "ORDER_BOOK_STATUS_STATUS_ACTIVE",
+        "ORDER_BOOK_STATUS_STATUS_RESOLVED",
+        "ORDER_BOOK_STATUS_STATUS_SETTLED"
+      ],
+      "default": "ORDER_BOOK_STATUS_UNSPECIFIED",
+      "description": "OrderBookStatus is the enum type for the status of the order book.\n\n - ORDER_BOOK_STATUS_UNSPECIFIED: invalid\n - ORDER_BOOK_STATUS_STATUS_ACTIVE: active\n - ORDER_BOOK_STATUS_STATUS_RESOLVED: resolved not settled\n - ORDER_BOOK_STATUS_STATUS_SETTLED: resolved and settled"
+    },
+    "fanx.strategicreserve.Params": {
+      "type": "object",
+      "properties": {
+        "max_order_book_participations": {
+          "type": "string",
+          "format": "uint64",
+          "description": "max_order_book_participations is the maximum number of participations per\nbook."
+        },
+        "batch_settlement_count": {
+          "type": "string",
+          "format": "uint64",
+          "description": "batch_settlement_count is the batch settlement deposit count."
+        }
+      },
+      "description": "Params defines the parameters for the strategic reserve module."
+    },
+    "fanx.strategicreserve.ParticipationBetPair": {
+      "type": "object",
+      "properties": {
+        "order_book_uid": {
+          "type": "string",
+          "title": "order_book_uid is the unique identifier corresponding to the order book"
+        },
+        "participation_index": {
+          "type": "string",
+          "format": "uint64",
+          "description": "participation_index is the index of participation corresponding to the bet\nfulfillment."
+        },
+        "bet_uid": {
+          "type": "string",
+          "description": "bet_uid is the bet universal unique identifier of the bet that is\nfulfilled."
+        }
+      },
+      "description": "ParticipationBetPair represents the book participation and bet bond."
+    },
+    "fanx.strategicreserve.ParticipationExposure": {
+      "type": "object",
+      "properties": {
+        "order_book_uid": {
+          "type": "string",
+          "description": "order_book_uid is the universally unique identifier of the order book that\nthe exposure is being set."
+        },
+        "odds_uid": {
+          "type": "string",
+          "description": "odds_uid is the odds universal unique identifier that the exposure is being\nset."
+        },
+        "participation_index": {
+          "type": "string",
+          "format": "uint64",
+          "description": "participation_index is the index of participation in the queue."
+        },
+        "exposure": {
+          "type": "string",
+          "description": "exposure is the total exposure taken on given odds."
+        },
+        "bet_amount": {
+          "type": "string",
+          "description": "bet_amount is the total bet amount corresponding to the exposure."
+        },
+        "is_fulfilled": {
+          "type": "boolean",
+          "description": "is_fulfilled represents if the participation exposure is fulfilled or not."
+        },
+        "round": {
+          "type": "string",
+          "format": "uint64",
+          "description": "round is the current round number in the queue."
+        }
+      },
+      "description": "ParticipationExposure represents the exposures taken on odds by\nparticipations."
+    },
+    "fanx.strategicreserve.QueryHistoricalParticipationExposuresResponse": {
+      "type": "object",
+      "properties": {
+        "participation_exposures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.strategicreserve.ParticipationExposure"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/cosmos.base.query.v1beta1.PageResponse",
+          "description": "pagination defines the pagination in the response."
+        }
+      },
+      "description": "QueryHistoricalParticipationExposuresResponse is the response type for the\nQuery/HistoricalParticipationExposures RPC method."
+    },
+    "fanx.strategicreserve.QueryOrderBookExposureResponse": {
+      "type": "object",
+      "properties": {
+        "order_book_exposure": {
+          "$ref": "#/definitions/fanx.strategicreserve.OrderBookOddsExposure",
+          "description": "order_book_exposure defines the order book exposure info."
+        }
+      },
+      "description": "QueryOrderBookExposureResponse is the response type for the\nQuery/OrderBookExposure RPC method."
+    },
+    "fanx.strategicreserve.QueryOrderBookExposuresResponse": {
+      "type": "object",
+      "properties": {
+        "order_book_exposures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.strategicreserve.OrderBookOddsExposure"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/cosmos.base.query.v1beta1.PageResponse",
+          "description": "pagination defines the pagination in the response."
+        }
+      },
+      "description": "QueryOrderBookExposuresResponse is the response type for the\nQuery/OrderBookExposures RPC method."
+    },
+    "fanx.strategicreserve.QueryOrderBookParticipationResponse": {
+      "type": "object",
+      "properties": {
+        "order_book_participation": {
+          "$ref": "#/definitions/fanx.strategicreserve.OrderBookParticipation",
+          "description": "order_book_participation defines the book participation info."
+        }
+      },
+      "description": "QueryOrderBookParticipationResponse is the response type for the\nQuery/OrderBookParticipation RPC method."
+    },
+    "fanx.strategicreserve.QueryOrderBookParticipationsResponse": {
+      "type": "object",
+      "properties": {
+        "order_book_participations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.strategicreserve.OrderBookParticipation"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/cosmos.base.query.v1beta1.PageResponse",
+          "description": "pagination defines the pagination in the response."
+        }
+      },
+      "title": "QueryOrderBookParticipationsResponse is the response type for the\nQuery/OrderBookParticipations RPC method"
+    },
+    "fanx.strategicreserve.QueryOrderBookResponse": {
+      "type": "object",
+      "properties": {
+        "order_book": {
+          "$ref": "#/definitions/fanx.strategicreserve.OrderBook",
+          "description": "orderBook defines the order book info."
+        }
+      },
+      "description": "QueryOrderBookResponse is the response type for the Query/OrderBook RPC\nmethod."
+    },
+    "fanx.strategicreserve.QueryOrderBooksResponse": {
+      "type": "object",
+      "properties": {
+        "orderbooks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.strategicreserve.OrderBook"
+          },
+          "description": "orderbooks contains all the queried order books."
+        },
+        "pagination": {
+          "$ref": "#/definitions/cosmos.base.query.v1beta1.PageResponse",
+          "description": "pagination defines the pagination in the response."
+        }
+      },
+      "description": "QueryOrderBooksResponse is the response type for the Query/OrderBooks RPC\nmethod."
+    },
+    "fanx.strategicreserve.QueryParamsResponse": {
+      "type": "object",
+      "properties": {
+        "params": {
+          "$ref": "#/definitions/fanx.strategicreserve.Params",
+          "description": "params holds all the parameters of this module."
+        }
+      },
+      "description": "QueryParamsResponse is the response type for the Query/Params RPC method\nQuery/Params RPC method."
+    },
+    "fanx.strategicreserve.QueryParticipationExposureResponse": {
+      "type": "object",
+      "properties": {
+        "participation_exposure": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.strategicreserve.ParticipationExposure"
+          },
+          "description": "participation_exposure defines the participation exposure info."
+        },
+        "pagination": {
+          "$ref": "#/definitions/cosmos.base.query.v1beta1.PageResponse",
+          "description": "pagination defines the pagination in the response."
+        }
+      },
+      "description": "QueryParticipationExposureResponse is the response type for the\nQuery/ParticipationExposure RPC method."
+    },
+    "fanx.strategicreserve.QueryParticipationExposuresResponse": {
+      "type": "object",
+      "properties": {
+        "participation_exposures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.strategicreserve.ParticipationExposure"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/cosmos.base.query.v1beta1.PageResponse",
+          "description": "pagination defines the pagination in the response."
+        }
+      },
+      "description": "QueryParticipationExposuresResponse is the response type for the\nQuery/ParticipationExposures RPC method."
+    },
+    "fanx.strategicreserve.QueryParticipationFulfilledBetsResponse": {
+      "type": "object",
+      "properties": {
+        "participation_bets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.strategicreserve.ParticipationBetPair"
+          },
+          "description": "participation_bets is the bets of the participation."
+        },
+        "pagination": {
+          "$ref": "#/definitions/cosmos.base.query.v1beta1.PageResponse",
+          "description": "pagination defines the pagination in the response."
+        }
+      },
+      "description": "QueryParticipationFulfilledBetsResponse is the response type for the\nQuery/ParticipationFulfilledBets RPC method."
+    },
+    "google.protobuf.Any": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "grpc.gateway.runtime.Error": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/google.protobuf.Any"
+          }
+        }
+      }
+    }
+  }
+}

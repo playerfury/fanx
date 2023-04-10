@@ -1,0 +1,424 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "fanx/market/query.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/fanx/market/markets": {
+      "get": {
+        "summary": "Queries a list of all the markets",
+        "operationId": "Markets",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.market.QueryMarketsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "pagination.key",
+            "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          },
+          {
+            "name": "pagination.offset",
+            "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.limit",
+            "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "pagination.count_total",
+            "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "pagination.reverse",
+            "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/market/markets_by_uids/{uids}": {
+      "get": {
+        "summary": "Queries a list of markets by UIDs.",
+        "operationId": "MarketsByUIDs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.market.QueryMarketsByUIDsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "uids",
+            "in": "path",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "csv",
+            "minItems": 1
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/market/params": {
+      "get": {
+        "summary": "Params queries the parameters of the module.",
+        "operationId": "Params",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.market.QueryParamsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "tags": [
+          "Query"
+        ]
+      }
+    },
+    "/fanx/market/{uid}": {
+      "get": {
+        "summary": "Queries a market by uid.",
+        "operationId": "Market",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fanx.market.QueryMarketResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/grpc.gateway.runtime.Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Query"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "cosmos.base.query.v1beta1.PageRequest": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "format": "byte",
+          "description": "key is a value returned in PageResponse.next_key to begin\nquerying the next page most efficiently. Only one of offset or key\nshould be set."
+        },
+        "offset": {
+          "type": "string",
+          "format": "uint64",
+          "description": "offset is a numeric offset that can be used when key is unavailable.\nIt is less efficient than using key. Only one of offset or key should\nbe set."
+        },
+        "limit": {
+          "type": "string",
+          "format": "uint64",
+          "description": "limit is the total number of results to be returned in the result page.\nIf left empty it will default to a value to be set by each app."
+        },
+        "count_total": {
+          "type": "boolean",
+          "description": "count_total is set to true  to indicate that the result set should include\na count of the total number of items available for pagination in UIs.\ncount_total is only respected when offset is used. It is ignored when key\nis set."
+        },
+        "reverse": {
+          "type": "boolean",
+          "description": "reverse is set to true if results are to be returned in the descending order.\n\nSince: cosmos-sdk 0.43"
+        }
+      },
+      "description": "message SomeRequest {\n         Foo some_parameter = 1;\n         PageRequest pagination = 2;\n }",
+      "title": "PageRequest is to be embedded in gRPC request messages for efficient\npagination. Ex:"
+    },
+    "cosmos.base.query.v1beta1.PageResponse": {
+      "type": "object",
+      "properties": {
+        "next_key": {
+          "type": "string",
+          "format": "byte",
+          "description": "next_key is the key to be passed to PageRequest.key to\nquery the next page most efficiently. It will be empty if\nthere are no more results."
+        },
+        "total": {
+          "type": "string",
+          "format": "uint64",
+          "title": "total is total number of results available if PageRequest.count_total\nwas set, its value is undefined otherwise"
+        }
+      },
+      "description": "PageResponse is to be embedded in gRPC response messages where the\ncorresponding request message has used PageRequest.\n\n message SomeResponse {\n         repeated Bar results = 1;\n         PageResponse page = 2;\n }"
+    },
+    "fanx.market.Market": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "uid is the universal unique identifier of the market."
+        },
+        "start_ts": {
+          "type": "string",
+          "format": "uint64",
+          "description": "start_ts is the start timestamp of the market."
+        },
+        "end_ts": {
+          "type": "string",
+          "format": "uint64",
+          "description": "end_ts is the end timestamp of the market."
+        },
+        "odds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.market.Odds"
+          },
+          "description": "odds is the list of odds of the market."
+        },
+        "winner_odds_uids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "winner_odds_uids is the list of winner odds universal unique identifiers."
+        },
+        "status": {
+          "$ref": "#/definitions/fanx.market.MarketStatus",
+          "description": "status is the current status of the market."
+        },
+        "resolution_ts": {
+          "type": "string",
+          "format": "uint64",
+          "description": "resolution_ts is the timestamp of the resolution of market."
+        },
+        "creator": {
+          "type": "string",
+          "description": "creator is the address of the creator of market."
+        },
+        "bet_constraints": {
+          "$ref": "#/definitions/fanx.market.MarketBetConstraints",
+          "description": "bet_constraints holds the constraints of market to accept bets."
+        },
+        "meta": {
+          "type": "string",
+          "description": "meta contains human-readable metadata of the market."
+        },
+        "sr_contribution_for_house": {
+          "type": "string",
+          "title": "sr_contribution_for_house is the amount of contribution by sr for the house"
+        },
+        "book_uid": {
+          "type": "string",
+          "title": "book_uid is the unique identifier corresponding to the book"
+        }
+      },
+      "description": "Market is the representation of the market to be stored in\nthe market state."
+    },
+    "fanx.market.MarketBetConstraints": {
+      "type": "object",
+      "properties": {
+        "min_amount": {
+          "type": "string",
+          "description": "min_amount is the minimum allowed bet amount for a market."
+        },
+        "bet_fee": {
+          "type": "string",
+          "description": "bet_fee is the fee that the bettor needs to pay to bet on the market."
+        }
+      },
+      "title": "MarketBetConstraints is the bet constrains type for the market"
+    },
+    "fanx.market.MarketStatus": {
+      "type": "string",
+      "enum": [
+        "MARKET_STATUS_UNSPECIFIED",
+        "MARKET_STATUS_ACTIVE",
+        "MARKET_STATUS_INACTIVE",
+        "MARKET_STATUS_CANCELED",
+        "MARKET_STATUS_ABORTED",
+        "MARKET_STATUS_RESULT_DECLARED"
+      ],
+      "default": "MARKET_STATUS_UNSPECIFIED",
+      "description": "- MARKET_STATUS_UNSPECIFIED: unspecified market\n - MARKET_STATUS_ACTIVE: market is active\n - MARKET_STATUS_INACTIVE: market is inactive\n - MARKET_STATUS_CANCELED: market is canceled\n - MARKET_STATUS_ABORTED: market is aborted\n - MARKET_STATUS_RESULT_DECLARED: result of the market is declared",
+      "title": "MarketStatus is the market status enumeration"
+    },
+    "fanx.market.Odds": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "uid is the universal unique identifier of the odds."
+        },
+        "meta": {
+          "type": "string",
+          "description": "meta contains any human-readable metadata of the odds."
+        }
+      },
+      "description": "Odds is a representation of market odds."
+    },
+    "fanx.market.Params": {
+      "type": "object",
+      "properties": {
+        "min_bet_amount": {
+          "type": "string",
+          "description": "min_bet_amount is the default minimum bet amount for a market."
+        },
+        "min_bet_fee": {
+          "type": "string",
+          "description": "min_bet_fee is the default minimum bet fee for a market."
+        },
+        "max_sr_contribution": {
+          "type": "string",
+          "description": "max_sr_contribution is the default max sr contribution for a market."
+        }
+      },
+      "description": "Params defines the parameters for the module.\nIt contains bet constraints associated to a market."
+    },
+    "fanx.market.QueryMarketResponse": {
+      "type": "object",
+      "properties": {
+        "market": {
+          "$ref": "#/definitions/fanx.market.Market"
+        }
+      },
+      "description": "QueryMarketRequest is the response type for the Query/{uid} RPC method.\nQuery/Market RPC method."
+    },
+    "fanx.market.QueryMarketsByUIDsResponse": {
+      "type": "object",
+      "properties": {
+        "markets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.market.Market"
+          }
+        },
+        "failed_markets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "QueryMarketsByUIDsResponse is the response type for the\nQuery/MarketsByUIDs RPC method."
+    },
+    "fanx.market.QueryMarketsResponse": {
+      "type": "object",
+      "properties": {
+        "market": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fanx.market.Market"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/cosmos.base.query.v1beta1.PageResponse"
+        }
+      },
+      "description": "QueryMarketsResponse is the response type for the Query/markets RPC\nmethod.\nQuery/Markets RPC method."
+    },
+    "fanx.market.QueryParamsResponse": {
+      "type": "object",
+      "properties": {
+        "params": {
+          "$ref": "#/definitions/fanx.market.Params",
+          "description": "params hold all the parameters of this module."
+        }
+      },
+      "description": "QueryParamsResponse is the response type for the Query/Params RPC method.\nQuery/Params RPC method."
+    },
+    "google.protobuf.Any": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "grpc.gateway.runtime.Error": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/google.protobuf.Any"
+          }
+        }
+      }
+    }
+  }
+}
