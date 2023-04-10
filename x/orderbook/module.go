@@ -15,9 +15,9 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/sge-network/sge/x/orderbook/client/cli"
-	"github.com/sge-network/sge/x/orderbook/keeper"
-	"github.com/sge-network/sge/x/orderbook/types"
+	"github.com/playerfury/fanx/x/orderbook/client/cli"
+	"github.com/playerfury/fanx/x/orderbook/keeper"
+	"github.com/playerfury/fanx/x/orderbook/types"
 )
 
 // AppModuleBasic defines the basic application module used by the orderbook module.

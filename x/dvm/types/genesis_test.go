@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sge-network/sge/x/dvm/types"
+	"github.com/playerfury/fanx/x/dvm/types"
 	"github.com/stretchr/testify/require"
 )
 

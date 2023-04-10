@@ -3,11 +3,11 @@ package params
 // App Parameters
 const (
 	// HumanCoinUnit is human readable representation of the coin name
-	HumanCoinUnit = "sge"
+	HumanCoinUnit = "fanx"
 	// BaseCoinUnit is the actual name of coin used in transaction
-	BaseCoinUnit = "usge"
-	// SGEExponent is the exponential digits of the coin
-	SGEExponent = 6
+	BaseCoinUnit = "ufanx"
+	// FURYXExponent is the exponential digits of the coin
+	FURYXExponent = 6
 	// DefaultBondDenom is the default staking denom of application
 	DefaultBondDenom = BaseCoinUnit
 )

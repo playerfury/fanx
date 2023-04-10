@@ -7,7 +7,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 	// "github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/sge-network/sge/x/dvm/types"
+	"github.com/playerfury/fanx/x/dvm/types"
 )
 
 // GetTxCmd returns the transaction commands for this module

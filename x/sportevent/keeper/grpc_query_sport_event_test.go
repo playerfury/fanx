@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/consts"
-	"github.com/sge-network/sge/testutil/nullify"
-	"github.com/sge-network/sge/x/sportevent/types"
+	"github.com/playerfury/fanx/consts"
+	"github.com/playerfury/fanx/testutil/nullify"
+	"github.com/playerfury/fanx/x/sportevent/types"
 	"github.com/spf13/cast"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"

@@ -3,8 +3,8 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/sge-network/sge/x/bet/types"
-	sporteventtypes "github.com/sge-network/sge/x/sportevent/types"
+	"github.com/playerfury/fanx/x/bet/types"
+	sporteventtypes "github.com/playerfury/fanx/x/sportevent/types"
 	"github.com/spf13/cast"
 )
 

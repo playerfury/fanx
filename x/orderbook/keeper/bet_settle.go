@@ -4,8 +4,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	bettypes "github.com/sge-network/sge/x/bet/types"
-	"github.com/sge-network/sge/x/orderbook/types"
+	bettypes "github.com/playerfury/fanx/x/bet/types"
+	"github.com/playerfury/fanx/x/orderbook/types"
 )
 
 // RefundBettor process bets in case sports event gets cancelled or aborted.

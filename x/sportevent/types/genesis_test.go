@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/sge-network/sge/x/sportevent/types"
+	"github.com/playerfury/fanx/x/sportevent/types"
 	"github.com/stretchr/testify/require"
 )
 

@@ -4,8 +4,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/sge-network/sge/x/orderbook/types"
-	srtypes "github.com/sge-network/sge/x/strategicreserve/types"
+	"github.com/playerfury/fanx/x/orderbook/types"
+	srtypes "github.com/playerfury/fanx/x/strategicreserve/types"
 )
 
 // SetBook sets a book.

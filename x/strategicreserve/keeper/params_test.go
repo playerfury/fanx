@@ -3,7 +3,7 @@ package keeper_test
 import (
 	"testing"
 
-	"github.com/sge-network/sge/x/strategicreserve/types"
+	"github.com/playerfury/fanx/x/strategicreserve/types"
 	"github.com/stretchr/testify/require"
 )
 

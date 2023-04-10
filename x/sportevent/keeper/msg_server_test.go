@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	simappUtil "github.com/sge-network/sge/testutil/simapp"
-	"github.com/sge-network/sge/x/sportevent/keeper"
-	"github.com/sge-network/sge/x/sportevent/types"
+	simappUtil "github.com/playerfury/fanx/testutil/simapp"
+	"github.com/playerfury/fanx/x/sportevent/keeper"
+	"github.com/playerfury/fanx/x/sportevent/types"
 )
 
 func setupMsgServerAndKeeper(t testing.TB) (*keeper.KeeperTest, types.MsgServer, sdk.Context, context.Context) {

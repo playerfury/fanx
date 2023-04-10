@@ -7,8 +7,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/sge-network/sge/x/sportevent/keeper"
-	"github.com/sge-network/sge/x/sportevent/types"
+	"github.com/playerfury/fanx/x/sportevent/keeper"
+	"github.com/playerfury/fanx/x/sportevent/types"
 )
 
 // SimulateMsgUpdateEvent simulates update event message

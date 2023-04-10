@@ -7,9 +7,9 @@ import (
 	"testing"
 
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/sge-network/sge/testutil/sample"
-	"github.com/sge-network/sge/utils"
-	"github.com/sge-network/sge/x/dvm/types"
+	"github.com/playerfury/fanx/testutil/sample"
+	"github.com/playerfury/fanx/utils"
+	"github.com/playerfury/fanx/x/dvm/types"
 	"github.com/stretchr/testify/require"
 )
 

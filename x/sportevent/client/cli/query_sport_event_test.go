@@ -12,10 +12,10 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/sge-network/sge/testutil/network"
-	"github.com/sge-network/sge/testutil/nullify"
-	"github.com/sge-network/sge/x/sportevent/client/cli"
-	"github.com/sge-network/sge/x/sportevent/types"
+	"github.com/playerfury/fanx/testutil/network"
+	"github.com/playerfury/fanx/testutil/nullify"
+	"github.com/playerfury/fanx/x/sportevent/client/cli"
+	"github.com/playerfury/fanx/x/sportevent/types"
 )
 
 func networkWithSportEventObjects(t *testing.T, n int) (*network.Network, []types.SportEvent) {

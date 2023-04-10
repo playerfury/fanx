@@ -1,0 +1,9 @@
+syntax = "proto3";
+package playerfury.fanx.dvm;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/playerfury/fanx/x/dvm/types";
+
+// Params defines the parameters for the module.
+message Params { option (gogoproto.goproto_stringer) = false; }

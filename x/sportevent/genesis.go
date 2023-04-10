@@ -2,8 +2,8 @@ package sportevent
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/x/sportevent/keeper"
-	"github.com/sge-network/sge/x/sportevent/types"
+	"github.com/playerfury/fanx/x/sportevent/keeper"
+	"github.com/playerfury/fanx/x/sportevent/types"
 )
 
 // InitGenesis initializes the module's state from a provided genesis

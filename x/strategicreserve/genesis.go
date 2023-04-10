@@ -5,9 +5,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/sge-network/sge/consts"
-	"github.com/sge-network/sge/x/strategicreserve/keeper"
-	"github.com/sge-network/sge/x/strategicreserve/types"
+	"github.com/playerfury/fanx/consts"
+	"github.com/playerfury/fanx/x/strategicreserve/keeper"
+	"github.com/playerfury/fanx/x/strategicreserve/types"
 )
 
 // InitGenesis initializes the module's state from a provided genesis

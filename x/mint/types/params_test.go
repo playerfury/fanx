@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/app/params"
-	"github.com/sge-network/sge/x/mint/types"
+	"github.com/playerfury/fanx/app/params"
+	"github.com/playerfury/fanx/x/mint/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -21,7 +21,7 @@ func TestParamsYML(t *testing.T) {
 	}
 
 	ymlStr := param.String()
-	require.Equal(t, "mintdenom: usge\nblocks_per_year: 10\nphases:\n- inflation: \"10.000000000000000000\"\n  year_coefficient: \"1.000000000000000000\"\nexclude_amount: \"100\"\n", ymlStr)
+	require.Equal(t, "mintdenom: ufanx\nblocks_per_year: 10\nphases:\n- inflation: \"10.000000000000000000\"\n  year_coefficient: \"1.000000000000000000\"\nexclude_amount: \"100\"\n", ymlStr)
 }
 
 func TestIsPhaseAtStep(t *testing.T) {

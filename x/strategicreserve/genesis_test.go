@@ -3,10 +3,10 @@ package strategicreserve_test
 import (
 	"testing"
 
-	"github.com/sge-network/sge/testutil/nullify"
-	simappUtil "github.com/sge-network/sge/testutil/simapp"
-	"github.com/sge-network/sge/x/strategicreserve"
-	"github.com/sge-network/sge/x/strategicreserve/types"
+	"github.com/playerfury/fanx/testutil/nullify"
+	simappUtil "github.com/playerfury/fanx/testutil/simapp"
+	"github.com/playerfury/fanx/x/strategicreserve"
+	"github.com/playerfury/fanx/x/strategicreserve/types"
 	"github.com/stretchr/testify/require"
 )
 

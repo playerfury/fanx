@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/google/uuid"
-	"github.com/sge-network/sge/x/bet/types"
+	"github.com/playerfury/fanx/x/bet/types"
 	"github.com/stretchr/testify/require"
 )
 

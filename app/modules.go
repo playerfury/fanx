@@ -39,27 +39,27 @@ import (
 	ibctransfertypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
 	ibc "github.com/cosmos/ibc-go/v3/modules/core"
 	ibchost "github.com/cosmos/ibc-go/v3/modules/core/24-host"
-	sgeappparams "github.com/sge-network/sge/app/params"
-	"github.com/sge-network/sge/x/mint"
-	minttypes "github.com/sge-network/sge/x/mint/types"
+	fanxappparams "github.com/playerfury/fanx/app/params"
+	"github.com/playerfury/fanx/x/mint"
+	minttypes "github.com/playerfury/fanx/x/mint/types"
 
-	betmodule "github.com/sge-network/sge/x/bet"
-	betmoduletypes "github.com/sge-network/sge/x/bet/types"
+	betmodule "github.com/playerfury/fanx/x/bet"
+	betmoduletypes "github.com/playerfury/fanx/x/bet/types"
 
-	sporteventmodule "github.com/sge-network/sge/x/sportevent"
-	sporteventmoduletypes "github.com/sge-network/sge/x/sportevent/types"
+	sporteventmodule "github.com/playerfury/fanx/x/sportevent"
+	sporteventmoduletypes "github.com/playerfury/fanx/x/sportevent/types"
 
-	strategicreservemodule "github.com/sge-network/sge/x/strategicreserve"
-	strategicreservemoduletypes "github.com/sge-network/sge/x/strategicreserve/types"
+	strategicreservemodule "github.com/playerfury/fanx/x/strategicreserve"
+	strategicreservemoduletypes "github.com/playerfury/fanx/x/strategicreserve/types"
 
-	dvmmodule "github.com/sge-network/sge/x/dvm"
-	dvmmoduletypes "github.com/sge-network/sge/x/dvm/types"
+	dvmmodule "github.com/playerfury/fanx/x/dvm"
+	dvmmoduletypes "github.com/playerfury/fanx/x/dvm/types"
 
-	housemodule "github.com/sge-network/sge/x/house"
-	housemoduletypes "github.com/sge-network/sge/x/house/types"
+	housemodule "github.com/playerfury/fanx/x/house"
+	housemoduletypes "github.com/playerfury/fanx/x/house/types"
 
-	orderbookmodule "github.com/sge-network/sge/x/orderbook"
-	orderbookmoduletypes "github.com/sge-network/sge/x/orderbook/types"
+	orderbookmodule "github.com/playerfury/fanx/x/orderbook"
+	orderbookmoduletypes "github.com/playerfury/fanx/x/orderbook/types"
 
 	// unnamed import of statik for swagger UI support
 	_ "github.com/cosmos/cosmos-sdk/client/docs/statik"
@@ -115,8 +115,8 @@ var ModuleBasics = module.NewBasicManager(
 )
 
 func appModules(
-	app *SgeApp,
-	encodingConfig sgeappparams.EncodingConfig,
+	app *FuryxApp,
+	encodingConfig fanxappparams.EncodingConfig,
 	skipGenesisInvariants bool,
 ) []module.AppModule {
 	appCodec := encodingConfig.Marshaler
@@ -160,8 +160,8 @@ func appModules(
 // simulationModules returns modules for simulation manager
 // define the order of the modules for deterministic simulations
 func simulationModules(
-	app *SgeApp,
-	encodingConfig sgeappparams.EncodingConfig,
+	app *FuryxApp,
+	encodingConfig fanxappparams.EncodingConfig,
 	_ bool,
 ) []module.AppModuleSimulation {
 	appCodec := encodingConfig.Marshaler

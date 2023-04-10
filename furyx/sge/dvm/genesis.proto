@@ -1,0 +1,28 @@
+syntax = "proto3";
+package playerfury.fanx.dvm;
+
+import "gogoproto/gogo.proto";
+import "fanx/dvm/params.proto";
+import "fanx/dvm/key_vault.proto";
+import "fanx/dvm/proposal.proto";
+import "fanx/dvm/stats.proto";
+
+option go_package = "github.com/playerfury/fanx/x/dvm/types";
+
+// GenesisState defines the dvm module's genesis state.
+message GenesisState {
+  // params contains parameters of dvm module.
+  Params params = 1 [ (gogoproto.nullable) = false ];
+  // key_vault trusted keys from genesis file.
+  KeyVault key_vault = 2 [ (gogoproto.nullable) = false ];
+  // active_pubkeys_change_proposals is the finished proposal list for the
+  // public keys change.
+  repeated PublicKeysChangeProposal active_pubkeys_change_proposals = 3
+      [ (gogoproto.nullable) = false ];
+  // finished_pubkeys_change_proposals is the active proposal list for the
+  // public keys change.
+  repeated PublicKeysChangeFinishedProposal finished_pubkeys_change_proposals =
+      4 [ (gogoproto.nullable) = false ];
+  // proposal_stats holds the proposal statistics.
+  ProposalStats proposal_stats = 5 [ (gogoproto.nullable) = false ];
+}

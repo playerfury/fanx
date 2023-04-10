@@ -1,0 +1,16 @@
+syntax = "proto3";
+package playerfury.fanx.mint;
+
+import "gogoproto/gogo.proto";
+import "fanx/mint/params.proto";
+import "fanx/mint/minter.proto";
+
+option go_package = "github.com/playerfury/fanx/x/mint/types";
+
+// GenesisState defines the mint module's genesis state.
+message GenesisState {
+  // minter is a space for holding current inflation information.
+  Minter minter = 1 [ (gogoproto.nullable) = false ];
+  // params contains the mint module parameters.
+  Params params = 2 [ (gogoproto.nullable) = false ];
+}

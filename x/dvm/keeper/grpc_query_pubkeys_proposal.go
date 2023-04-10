@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/query"
-	"github.com/sge-network/sge/consts"
-	"github.com/sge-network/sge/x/dvm/types"
+	"github.com/playerfury/fanx/consts"
+	"github.com/playerfury/fanx/x/dvm/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

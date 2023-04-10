@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/sge-network/sge/x/sportevent/types"
+	"github.com/playerfury/fanx/x/sportevent/types"
 )
 
 type msgServer struct {

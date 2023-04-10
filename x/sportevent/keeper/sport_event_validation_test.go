@@ -7,8 +7,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/google/uuid"
-	"github.com/sge-network/sge/testutil/sample"
-	"github.com/sge-network/sge/x/sportevent/types"
+	"github.com/playerfury/fanx/testutil/sample"
+	"github.com/playerfury/fanx/x/sportevent/types"
 	"github.com/stretchr/testify/require"
 )
 

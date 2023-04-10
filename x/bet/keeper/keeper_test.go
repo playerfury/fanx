@@ -9,11 +9,11 @@ import (
 	"github.com/spf13/cast"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	simappUtil "github.com/sge-network/sge/testutil/simapp"
-	"github.com/sge-network/sge/x/bet/keeper"
-	"github.com/sge-network/sge/x/bet/types"
-	sporteventkeeper "github.com/sge-network/sge/x/sportevent/keeper"
-	sporteventtypes "github.com/sge-network/sge/x/sportevent/types"
+	simappUtil "github.com/playerfury/fanx/testutil/simapp"
+	"github.com/playerfury/fanx/x/bet/keeper"
+	"github.com/playerfury/fanx/x/bet/types"
+	sporteventkeeper "github.com/playerfury/fanx/x/sportevent/keeper"
+	sporteventtypes "github.com/playerfury/fanx/x/sportevent/types"
 	"github.com/stretchr/testify/require"
 )
 
