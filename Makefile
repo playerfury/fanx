@@ -241,7 +241,7 @@ update-swagger-docs: statik
 .PHONY: update-swagger-docs
 
 godocs:
-	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/playerfury/furyx/types"
+	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/playerfury/fanx/types"
 	godoc -http=:6060
 
 # This builds a docs site for each branch/tag in `./docs/versions`
